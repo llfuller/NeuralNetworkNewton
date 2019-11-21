@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckPosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/CheckPosition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LabValues.npz" beforeDir="false" afterPath="$PROJECT_DIR$/LabValues.npz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,7 +143,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/SimulateCollisions.py</url>
-          <line>113</line>
+          <line>121</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

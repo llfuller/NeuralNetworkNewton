@@ -1,9 +1,17 @@
 import scipy as sp
 from scipy.stats import uniform as uni
 import time
-start_time = time.time()
 import matplotlib.pyplot as plt
 
+#   Creates elastic collision between two particles for arbitrary masses, center of mass velocities, and
+# center of momentum angles with respect to horizontal. First generates 1D collision along x-axis, with
+# particle 1 on +x-axis and particle 2 on -x-axis. The particles are rotated arbitrarily around the collision point,
+# and then a center of mass velocity is added to both velocities. The frame in which the center of mass moves is
+# the laboratory frame. All important physical quantity arrays are saved to LabValues.npz for later retrieval.
+# Author: Lawson Fuller
+
+
+start_time = time.time()
 numTrials = 6000
 
 # Notation:
