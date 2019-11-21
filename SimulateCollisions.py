@@ -4,6 +4,11 @@ import matplotlib.pyplot as plt
 
 numTrials = 10
 
+# Notation:
+# Letter "a" in variable name means quantity is in aligned (mass 1 on +x axis) CM frame
+# Letter "n" is "not aligned"/unaligned frame
+# Letter "L" is lab frame (CM velocity nonzero)
+
 def energy(m1, m2, v1, v2):
     v1_norm_squared = sp.array([sp.power(v1[trial][0],2) + sp.power(v1[trial][1],2) for trial in range(len(v1))])
     v2_norm_squared = sp.array([sp.power(v2[trial][0],2) + sp.power(v2[trial][1],2) for trial in range(len(v2))])
@@ -23,9 +28,9 @@ def y_momentum(m1, m2, v1, v2):
     p2 = sp.multiply(m2, v2_y)
     return sp.real(p1 + p2)
 def conservation(a_i, a_f):
-    print("a_i: " +str(a_i[0]))
-    print("a_f: " +str(a_f[0]))
-    print("error: " +str(sp.fabs(sp.divide((a_i - a_f),a_i))[0]))
+    # print("a_i: " +str(a_i[0]))
+    # print("a_f: " +str(a_f[0]))
+    # print("error: " +str(sp.fabs(sp.divide((a_i - a_f),a_i))[0]))
     return str( False not in (sp.isclose(a_i,a_f)))
 
 #===========================================
@@ -44,7 +49,7 @@ v1ax_max = 10
 vcm_min = -50
 vcm_max = 50
 
-# Random physical initial states for all trials
+# Random physical initial states for all trials with dimension (numTrials)
 m1_Arr = uni.rvs(m_min, m_max, size=numTrials)
 m2_Arr = uni.rvs(m_min, m_max, size=numTrials)
 x1a_Arr = uni.rvs(x_min, x_max, size=numTrials)
@@ -52,17 +57,17 @@ v1ax_Arr = sp.multiply(-1,uni.rvs(v1ax_min, v1ax_max, size=numTrials))
 vcm_x_Arr = uni.rvs(vcm_min, vcm_max, size=numTrials)
 vcm_y_Arr = uni.rvs(vcm_min, vcm_max, size=numTrials)
 
-# Always zero quantities
+# Always zero quantities with dimension (numTrials)
 y1a = sp.zeros(numTrials)
 v1ay_Arr = sp.zeros(numTrials)
 v2ay_Arr = sp.zeros(numTrials)
 
 # Time until collision
 t_col = sp.fabs(sp.divide(x1a_Arr,v1ax_Arr))
-# Velocity of particle 2
+# Velocity of particle 2 with dimension (numTrials)
 v2ax_Arr = sp.fabs(sp.multiply(v1ax_Arr,sp.divide(m1_Arr,m2_Arr)))
-# Initial placement of particle 2
-x2a_Arr = sp.multiply(-1,sp.divide(v2ax_Arr,t_col))
+# Initial placement of particle 2 with dimension (numTrials)
+x2a_Arr = sp.multiply(-1,sp.multiply(v2ax_Arr,t_col))
 
 
 # Full aligned vectors with dimensions (2, numTrials)
