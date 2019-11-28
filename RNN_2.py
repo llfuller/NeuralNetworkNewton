@@ -62,8 +62,6 @@ model.add(Dense(len(hugeArray_train[0]), input_shape=sp.shape(hugeArray_train[0]
 model.add(Dense(100, activation='relu'))
 model.add(Dense(10, activation='relu'))
 model.add(LeakyReLU(alpha=0.3))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(len(hugeArray_train[0]), activation='relu')) # in this case, outputs 8-long vector
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=0.001, decay=1e-3)
 
