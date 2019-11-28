@@ -6,7 +6,7 @@ import scipy as sp
 d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
-numSamples = 3000
+numSamples = 300
 T = 199 # number of timesteps in matrix
 
 Position1L_t=d_train['arr_11'][:,:numSamples,:].reshape((2,numSamples*T))
@@ -59,10 +59,17 @@ print("Testing Target shape: " + str(hugeArray_test_target.shape)) #(80000, 198)
 model = Sequential()
 model.add(Flatten(data_format=None))
 model.add(Dense(len(hugeArray_train[0]), input_shape=sp.shape(hugeArray_train[0]), activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(10, activation='relu'))
-model.add(Dense(100, activation='relu'))
-model.add(Dense(10, activation='relu'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
 model.add(LeakyReLU(alpha=0.3))
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-7)
