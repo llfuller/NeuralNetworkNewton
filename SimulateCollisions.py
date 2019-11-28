@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 
 start_time = time.time()
-numTrials = 6000
+numTrials = 10000
 
 # Notation:
 # Letter "a" in variable name means quantity is in aligned (mass 1 on +x axis) CM frame
@@ -208,6 +208,6 @@ Velocity2L_t = sp.concatenate((Velocity2L_t_pre[:,:,:timeStepOfCollision],Veloci
 print("Saving: ")
 print(str(time.time() - start_time)+" seconds")
 sp.savez("LabValues", v1L, v2L, v1L_f, v2L_f, E_i, E_f, p_x_i, p_x_f, p_y_i, p_y_f,
-         t, Position1L_t, Position2L_t, Velocity1L_t, Velocity2L_t)
+         t, Position1L_t, Position2L_t, Velocity1L_t, Velocity2L_t, m1_Arr, m2_Arr)
 print("Time to run: ")
 print(str(time.time() - start_time)+" seconds")

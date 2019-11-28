@@ -7,7 +7,7 @@ import scipy as sp
 d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
-numSamples = 100000
+numSamples = 10000
 Position1L_t=d_train['arr_11'][:,:numSamples,:]
 Position2L_t=d_train['arr_12'][:,:numSamples,:]
 Velocity1L_t=d_train['arr_13'][:,:numSamples,:]
@@ -53,15 +53,10 @@ hugeArray_test_target = sp.concatenate((Position1L_t_test[0][:,1:],Position1L_t_
                            Velocity2L_t_test[0][:,1:],Velocity2L_t_test[1][:,1:]),
                            axis=1)
 print(sp.shape(hugeArray_train))
-# # Train on 100000 samples, validate on 10000 samples
-# # Each number is a (28,28) grid
-print("X Training shape: " +str(hugeArray_train.shape)) # (60 000, 28, 28)
-print("X Testing shape: " +str(hugeArray_test.shape)) # (10 000, 28, 28)
-print("Y Training shape: " + str(hugeArray_train_target.shape)) #(60000,)
-print("Y Testing shape: " + str(hugeArray_test_target.shape)) #(10000)
-
-# x_train= x_train/255.0 #normalization
-# x_test = x_test/255.0
+print("Training input shape: " +str(hugeArray_train.shape)) # (10000, 1584)
+print("Testing input shape: " +str(hugeArray_test.shape)) # (10000, 1584)
+print("Training Target shape: " + str(hugeArray_train_target.shape)) # (10000, 1584)
+print("Testing Target shape: " + str(hugeArray_test_target.shape)) # (10000, 1584)
 
 model = Sequential()
 model.add(Flatten(data_format=None))
@@ -71,7 +66,6 @@ model.add(Dense(100, activation='softmax'))
 model.add(Dense(len(hugeArray_train[0])))
 #Compile:
 opt = tf.keras.optimizers.SGD(lr=0.00001, momentum = 0.0)
-# Note: even though this isn't used: mean_squared_error = mse
 model.compile(loss= 'mean_squared_error',
               optimizer = opt,
               metrics = ['accuracy'])
