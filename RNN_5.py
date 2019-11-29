@@ -9,8 +9,10 @@ plotHistory = True
 d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
-numSamples = 50
+numSamples = 200
 T = 199 # number of timesteps in matrix
+batchSize = T-1
+numEpochs = 10
 
 Position1L_t=d_train['arr_11'][:,:numSamples,:].reshape((2,numSamples*T))
 Position2L_t=d_train['arr_12'][:,:numSamples,:].reshape((2,numSamples*T))
@@ -64,8 +66,8 @@ print("Testing Target shape: " + str(hugeArray_test_target.shape)) #(80000, 198)
 
 model = Sequential()
 # model.add(Flatten(data_format=None))
-# model.add(Dense(12, input_shape=sp.shape(hugeArray_train[0]), activation='relu'))
-# model.add(Dense(len(hugeArray_train[0]), activation='relu'))
+model.add(Dense(12, input_shape=sp.shape(hugeArray_train[0]), activation='relu'))
+model.add(Dense(len(hugeArray_train[0]), activation='relu'))
 
 # model.add(Dense(len(hugeArray_train[0]),  activation='relu'))
 # for i in range(100):
@@ -79,7 +81,7 @@ model.compile(loss= 'mean_absolute_percentage_error',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
 # loss: 0.1379 - mean_absolute_percentage_error: 99.3193 - val_loss: 0.1622 - val_mean_absolute_percentage_error: 98.5299
-history = model.fit(hugeArray_train, hugeArray_train_target, epochs=3, validation_data = (hugeArray_test, hugeArray_test_target))
+history = model.fit(hugeArray_train, hugeArray_train_target, batch_size= batchSize, epochs=numEpochs, validation_data = (hugeArray_test, hugeArray_test_target))
 # lReLU_weights1 = model.layers[0].get_weights()[0]
 # lReLU_weights2 = model.layers[1].get_weights()[0]
 # print(lReLU_weights1)

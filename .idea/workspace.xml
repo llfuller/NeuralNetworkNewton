@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/PredictState.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RNN_4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RNN_5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/VisualizeModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_4layers_1000_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_4layers_1000_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mean_squared_log_error_loss_history_large.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mean_squared_log_error_loss_history_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/200_samples_1000_epochs_two_dense.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RNN_5.py" beforeDir="false" afterPath="$PROJECT_DIR$/RNN_5.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel.hd5/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.index" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
