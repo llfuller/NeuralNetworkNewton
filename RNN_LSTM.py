@@ -14,7 +14,7 @@ d_test = sp.load("LabValuesIntermediate.npz")
 numSamples = 1000
 T = 199 # number of timesteps in matrix
 batchSize = 10
-numEpochs = 100
+numEpochs = 10
 
 isCollision = sp.ones((T, 11))
 
@@ -38,9 +38,9 @@ Position1L_t_test= sp.transpose(d_test['arr_11'][:,:numSamples,:], (1,2,0)) # (s
 Position2L_t_test= sp.transpose(d_test['arr_12'][:,:numSamples,:], (1,2,0))
 Velocity1L_t_test= sp.transpose(d_test['arr_13'][:,:numSamples,:], (1,2,0))
 Velocity2L_t_test= sp.transpose(d_test['arr_14'][:,:numSamples,:], (1,2,0))
-m1_Arr_test=sp.repeat(d_train['arr_15'][:numSamples,sp.newaxis],T,axis=1)
-m2_Arr_test=sp.repeat(d_train['arr_16'][:numSamples,sp.newaxis],T,axis=1)
-dt_Arr_test=sp.repeat(d_train['arr_17'][:numSamples,sp.newaxis],T,axis=1)
+m1_Arr_test=sp.repeat(d_test['arr_15'][:numSamples,sp.newaxis],T,axis=1)
+m2_Arr_test=sp.repeat(d_test['arr_16'][:numSamples,sp.newaxis],T,axis=1)
+dt_Arr_test=sp.repeat(d_test['arr_17'][:numSamples,sp.newaxis],T,axis=1)
 E_i_test=d_test['arr_4'][:numSamples]
 E_f_test=d_test['arr_5'][:numSamples]
 p_x_i_test=d_test['arr_6'][:numSamples]
@@ -66,8 +66,8 @@ print(sp.shape(hugeArray_train))
 
 #==================================================
 # # Predict next state of system from current state
-# input_state = sp.array([hugeArray_test[0]])
-# target_state = sp.array([hugeArray_test_target[0]])
+# input_state = sp.array([hugeArray_train[0]])
+# target_state = sp.array([hugeArray_train_target[0]])
 # model = load_model('trainedModel_temp.hd5')
 # model.evaluate(x=input_state, y=target_state)
 # prediction = model.predict(input_state)
@@ -95,18 +95,13 @@ model = Sequential()
 # model.add(LSTM(sp.shape(hugeArray_train)[2], input_shape= sp.shape(hugeArray_train[0]) ) )
 # model.add(Dense(sp.shape(hugeArray_train)[2]*2, input_shape= sp.shape(hugeArray_train[0]), activation='relu'))
 # model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(input_shape = sp.shape(hugeArray_train[0]),alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(input_shape = sp.shape(hugeArray_train[0]),alpha=1))
+model.add(LeakyReLU(alpha=1))
+model.add(LeakyReLU(alpha=1))
+model.add(LeakyReLU(alpha=1))
+model.add(LeakyReLU(alpha=1))
+model.add(LeakyReLU(alpha=1))
+
 # test matrix has dimension (numSamples, T-1, 11)
 
 
@@ -122,7 +117,7 @@ model.add(LeakyReLU(alpha=0.3))
 #     model.add(Dense(len(hugeArray_train[0]), activation='relu'))
 
 #Compile:
-opt = tf.keras.optimizers.Adam(lr=1e-4, decay=1e-6)
+opt = tf.keras.optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
 
 model.compile(loss= 'mean_absolute_percentage_error',
               optimizer = opt,
