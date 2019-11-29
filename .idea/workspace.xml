@@ -2,8 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/PredictState.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RNN_4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RNN_5.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VisualizeModel.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_4layers_1000_large.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_4layers_1000_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_large.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mean_absolute_percentage_error_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mean_squared_log_error_loss_history_large.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mean_squared_log_error_loss_history_small.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModelMAPE_10000.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_MSL_10000.hd5/variables/variables.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNN_3.py" beforeDir="false" afterPath="$PROJECT_DIR$/RNN_3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +49,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/RNN_3.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RNN_5.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -46,7 +68,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RNN_3">
+  <component name="RunManager" selected="Python.RNN_5">
     <configuration name="CheckConservation" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,6 +174,48 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="RNN_4" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN_4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RNN_5" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RNN_5.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Sentdex Youtube Tutorial Modified" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -215,11 +279,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="VisualizeModel" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/VisualizeModel.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.SimulateCollisions" />
       <item itemvalue="Python.RNN" />
       <item itemvalue="Python.RNN_2" />
       <item itemvalue="Python.RNN_3" />
+      <item itemvalue="Python.RNN_4" />
+      <item itemvalue="Python.VisualizeModel" />
+      <item itemvalue="Python.RNN_5" />
       <item itemvalue="Python.Sentdex Youtube Tutorial" />
       <item itemvalue="Python.Sentdex Youtube Tutorial Modified" />
       <item itemvalue="Python.CheckConservation" />
@@ -277,6 +365,11 @@
           <url>file://$PROJECT_DIR$/RNN_2.py</url>
           <line>50</line>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/RNN_4.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

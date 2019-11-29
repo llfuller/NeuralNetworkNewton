@@ -191,23 +191,32 @@ Position1L_t_pre = sp.repeat(sp.transpose(InitialPosition1L)[:,:,sp.newaxis], ti
                + sp.multiply( sp.repeat(sp.transpose(v1L)[:, :, sp.newaxis], timeSteps, axis=2), sp.transpose(t) )
 Position2L_t_pre = sp.repeat(sp.transpose(InitialPosition2L)[:,:,sp.newaxis], timeSteps, axis=2) \
                + sp.multiply( sp.repeat(sp.transpose(v2L)[:, :, sp.newaxis], timeSteps, axis=2), sp.transpose(t) )
-Position1L_t_post = sp.repeat(Position1L_t_pre[:,:,timeStepOfCollision][:,:,sp.newaxis], timeSteps, axis=2) \
+Position1L_t_post = sp.repeat(Position1L_t_pre[:,:,timeStepOfCollision-1][:,:,sp.newaxis], timeSteps, axis=2) \
                + sp.multiply( sp.repeat(sp.transpose(v1L_f)[:, :, sp.newaxis], timeSteps, axis=2), sp.transpose(t) )
-Position2L_t_post = sp.repeat(Position2L_t_pre[:,:,timeStepOfCollision][:,:,sp.newaxis], timeSteps, axis=2) \
+Position2L_t_post = sp.repeat(Position2L_t_pre[:,:,timeStepOfCollision-1][:,:,sp.newaxis], timeSteps, axis=2) \
                + sp.multiply( sp.repeat(sp.transpose(v2L_f)[:, :, sp.newaxis], timeSteps, axis=2), sp.transpose(t) )
-Position1L_t = sp.concatenate((Position1L_t_pre[:,:,:timeStepOfCollision],Position1L_t_post[:,:,timeStepOfCollision:]),2)
-Position2L_t = sp.concatenate((Position2L_t_pre[:,:,:timeStepOfCollision],Position2L_t_post[:,:,timeStepOfCollision:]),2)
+Position1L_t = sp.concatenate((Position1L_t_pre[:,:,:timeStepOfCollision],Position1L_t_post[:,:,1:timeStepOfCollision]),2)
+Position2L_t = sp.concatenate((Position2L_t_pre[:,:,:timeStepOfCollision],Position2L_t_post[:,:,1:timeStepOfCollision]),2)
 Velocity1L_t_pre = sp.repeat(sp.transpose(v1L)[:, :, sp.newaxis], timeSteps, axis=2)
 Velocity2L_t_pre = sp.repeat(sp.transpose(v2L)[:, :, sp.newaxis], timeSteps, axis=2)
 Velocity1L_t_post = sp.repeat(sp.transpose(v1L_f)[:, :, sp.newaxis], timeSteps, axis=2)
 Velocity2L_t_post = sp.repeat(sp.transpose(v2L_f)[:, :, sp.newaxis], timeSteps, axis=2)
-Velocity1L_t = sp.concatenate((Velocity1L_t_pre[:,:,:timeStepOfCollision],Velocity1L_t_pre[:,:,timeStepOfCollision:]),2)
-Velocity2L_t = sp.concatenate((Velocity2L_t_pre[:,:,:timeStepOfCollision],Velocity2L_t_pre[:,:,timeStepOfCollision:]),2)
+Velocity1L_t = sp.concatenate((Velocity1L_t_pre[:,:,:timeStepOfCollision],Velocity1L_t_post[:,:,timeStepOfCollision:]),2)
+Velocity2L_t = sp.concatenate((Velocity2L_t_pre[:,:,:timeStepOfCollision],Velocity2L_t_post[:,:,timeStepOfCollision:]),2)
+print("Final X Array m1:" + str(Position1L_t[0,0,timeStepOfCollision-2:timeStepOfCollision+6]))
+print("Final X Array m2:" + str(Position2L_t[0,0,timeStepOfCollision-2:timeStepOfCollision+6]))
+print("Final Y Array m1:" + str(Position1L_t[1,0,timeStepOfCollision-2:timeStepOfCollision+6]))
+print("Final Y Array m2:" + str(Position2L_t[1,0,timeStepOfCollision-2:timeStepOfCollision+6]))
 
+print("Pre Array: "+ str(Position1L_t_pre[0,0,timeStepOfCollision-1:timeStepOfCollision+2]))
+print("Post Array: " + str(Position1L_t_post[0,0,:2]))
+print(sp.shape(Position1L_t))
+print(sp.shape(Velocity1L_t))
 # Save arrays to file
 print("Saving: ")
 print(str(time.time() - start_time)+" seconds")
+dt = sp.divide(sp.multiply(2,t_col), timeSteps-1)
 sp.savez("LabValues", v1L, v2L, v1L_f, v2L_f, E_i, E_f, p_x_i, p_x_f, p_y_i, p_y_f,
-         t, Position1L_t, Position2L_t, Velocity1L_t, Velocity2L_t, m1_Arr, m2_Arr)
+         t, Position1L_t, Position2L_t, Velocity1L_t, Velocity2L_t, m1_Arr, m2_Arr, dt)
 print("Time to run: ")
 print(str(time.time() - start_time)+" seconds")
