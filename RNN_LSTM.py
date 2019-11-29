@@ -48,11 +48,15 @@ p_x_f_test=d_test['arr_7'][:numSamples]
 p_y_i_test=d_test['arr_8'][:numSamples]
 p_y_f_test=d_test['arr_9'][:numSamples]
 
+alternatingZeros=sp.ones((numSamples,T-1,11))
+for i in range(0,T-1):
+    if i%2==1:
+        alternatingZeros[:,i,:]=0
 
 print("Position Vector: " +str(sp.shape(Position1L_t)))
-hugeArray_train = sp.dstack((Position1L_t[:,:-1], Position2L_t[:,:-1],
+hugeArray_train = sp.multiply(sp.dstack((Position1L_t[:,:-1], Position2L_t[:,:-1],
                                   Velocity1L_t[:,:-1], Velocity2L_t[:,:-1],
-                                 m1_Arr[:,:-1],m2_Arr[:,:-1],dt_Arr[:,:-1])) # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
+                                 m1_Arr[:,:-1],m2_Arr[:,:-1],dt_Arr[:,:-1])),alternatingZeros) # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
 hugeArray_train_target = sp.dstack((Position1L_t[:,1:], Position2L_t[:,1:],
                                          Velocity1L_t[:,1:], Velocity2L_t[:,1:],
                                          m1_Arr[:,1:],m2_Arr[:,1:],dt_Arr[:,1:])) # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
@@ -65,19 +69,19 @@ hugeArray_test_target = sp.dstack((Position1L_t_test[:,1:], Position2L_t_test[:,
 print(sp.shape(hugeArray_train))
 
 #==================================================
-# # Predict next state of system from current state
-# input_state = sp.array([hugeArray_train[0]])
-# target_state = sp.array([hugeArray_train_target[0]])
-# model = load_model('trainedModel_temp.hd5')
-# model.evaluate(x=input_state, y=target_state)
-# prediction = model.predict(input_state)
-# print("Axes: (row: time, column: feature)")
-# print("Input: ")
-# print(input_state)
-# print("Prediction: ")
-# print(prediction)
-# print("Actual target state: ")
-# print(target_state)
+# Predict next state of system from current state
+input_state = sp.array([hugeArray_train[0]])
+target_state = sp.array([hugeArray_train_target[0]])
+model = load_model('trainedModel_temp.hd5')
+model.evaluate(x=input_state, y=target_state)
+prediction = model.predict(input_state)
+print("Axes: (row: time, column: feature)")
+print("Input: ")
+print(input_state)
+print("Prediction: ")
+print(prediction)
+print("Actual target state: ")
+print(target_state)
 
 #=================================================
 

@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/RNN_LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RNN_LSTM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -399,7 +398,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RNN_LSTM.py</url>
-          <line>83</line>
+          <line>87</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
