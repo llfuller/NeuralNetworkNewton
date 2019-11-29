@@ -46,10 +46,10 @@ p_y_f_test=d_test['arr_9'][:numSamples]
 print("Position Vector: " +str(sp.shape(Position1L_t)))
 hugeArray_train = sp.vstack((Position1L_t[:,:-1], Position2L_t[:,:-1],
                                   Velocity1L_t[:,:-1], Velocity2L_t[:,:-1],
-                                 m1_Arr[:-1],m2_Arr[:-1],dt_Arr[:-1])).transpose() # axis 0 are timesteps (new sample very 199 timesteps), axis 1 is value
+                                 m1_Arr[:-1],m2_Arr[:-1],dt_Arr[:-1])).transpose() # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
 hugeArray_train_target = sp.vstack((Position1L_t[:,1:], Position2L_t[:,1:],
                                          Velocity1L_t[:,1:], Velocity2L_t[:,1:],
-                                         m1_Arr[1:],m2_Arr[1:],dt_Arr[1:])).transpose() # axis 0 are timesteps (new sample very 199 timesteps), axis 1 is value
+                                         m1_Arr[1:],m2_Arr[1:],dt_Arr[1:])).transpose() # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
 hugeArray_test = sp.vstack((Position1L_t_test[:,:-1], Position2L_t_test[:,:-1],
                                  Velocity1L_t_test[:,:-1], Velocity2L_t_test[:,:-1],
                                  m1_Arr_test[:-1],m2_Arr_test[:-1],dt_Arr_test[:-1])).transpose()
