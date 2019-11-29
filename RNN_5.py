@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Flatten, LeakyReLU, Dropout, PReLU
+from tensorflow.keras.layers import Dense, Flatten, LeakyReLU, Dropout, PReLU, SimpleRNN, LSTM
 import scipy as sp
 import matplotlib.pyplot as plt
 
@@ -66,7 +66,8 @@ print("Testing Target shape: " + str(hugeArray_test_target.shape)) #(80000, 198)
 
 model = Sequential()
 # model.add(Flatten(data_format=None))
-model.add(Dense(12, input_shape=sp.shape(hugeArray_train[0]), activation='relu'))
+# model.add(SimpleRNN(12, activation='relu', use_bias=True, kernel_initializer='glorot_uniform', recurrent_initializer='orthogonal', bias_initializer='zeros', kernel_regularizer=None, recurrent_regularizer=None, bias_regularizer=None, activity_regularizer=None, kernel_constraint=None, recurrent_constraint=None, bias_constraint=None, dropout=0.0, recurrent_dropout=0.0, return_sequences=False, return_state=False, go_backwards=False, stateful=False, unroll=False))
+model.add(Dense(len(hugeArray_train[0]), input_shape=sp.shape(hugeArray_train[0]), activation='relu'))
 model.add(Dense(len(hugeArray_train[0]), activation='relu'))
 
 # model.add(Dense(len(hugeArray_train[0]),  activation='relu'))
