@@ -1,5 +1,5 @@
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Dense, Flatten, LeakyReLU, Dropout, PReLU, SimpleRNN, LSTM
 import scipy as sp
 import matplotlib.pyplot as plt
@@ -13,8 +13,8 @@ d_test = sp.load("LabValuesIntermediate.npz")
 
 numSamples = 1000
 T = 199 # number of timesteps in matrix
-batchSize = 10
-numEpochs = 10
+batchSize = 32
+numEpochs = 100
 
 isCollision = sp.ones((T, 11))
 
@@ -52,20 +52,19 @@ alternatingZeros=sp.ones((numSamples,T-1,11))
 for i in range(0,T-1):
     if i%2==1:
         alternatingZeros[:,i,:]=0
+secondHalfZeroes = sp.ones((numSamples,T-1,11))
+for i in range(T-1):
+    secondHalfZeroes[:,i,:] = (i<(T-1)/2)*9000
 
 print("Position Vector: " +str(sp.shape(Position1L_t)))
-hugeArray_train = sp.multiply(sp.dstack((Position1L_t[:,:-1], Position2L_t[:,:-1],
-                                  Velocity1L_t[:,:-1], Velocity2L_t[:,:-1],
-                                 m1_Arr[:,:-1],m2_Arr[:,:-1],dt_Arr[:,:-1])),alternatingZeros) # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
+hugeArray_train = sp.dstack((Position1L_t[:,:-1], Position2L_t[:,:-1],
+                                      Velocity1L_t[:,:-1], Velocity2L_t[:,:-1],dt_Arr[:,:-1]))
 hugeArray_train_target = sp.dstack((Position1L_t[:,1:], Position2L_t[:,1:],
-                                         Velocity1L_t[:,1:], Velocity2L_t[:,1:],
-                                         m1_Arr[:,1:],m2_Arr[:,1:],dt_Arr[:,1:])) # axis 0 are timesteps (new sample every 199 timesteps), axis 1 is value
+                                         Velocity1L_t[:,1:], Velocity2L_t[:,1:],sp.multiply(dt_Arr[:,1:],0)))
 hugeArray_test = sp.dstack((Position1L_t_test[:,:-1], Position2L_t_test[:,:-1],
-                                 Velocity1L_t_test[:,:-1], Velocity2L_t_test[:,:-1],
-                                 m1_Arr_test[:,:-1],m2_Arr_test[:,:-1],dt_Arr_test[:,:-1]))
+                                 Velocity1L_t_test[:,:-1], Velocity2L_t_test[:,:-1],dt_Arr_test[:,:-1]))
 hugeArray_test_target = sp.dstack((Position1L_t_test[:,1:], Position2L_t_test[:,1:],
-                                        Velocity1L_t_test[:,1:], Velocity2L_t_test[:,1:],
-                                        m1_Arr_test[:,1:],m2_Arr_test[:,1:],dt_Arr_test[:,1:]))
+                                        Velocity1L_t_test[:,1:], Velocity2L_t_test[:,1:],sp.multiply(dt_Arr_test[:,:-1],0)))
 print(sp.shape(hugeArray_train))
 
 #==================================================
@@ -90,21 +89,25 @@ print("Testing input shape: " +str(hugeArray_test.shape)) # (numSamples, T-1, 11
 print("Training Target shape: " + str(hugeArray_train_target.shape)) #(numSamples, T-1, 11)
 print("Testing Target shape: " + str(hugeArray_test_target.shape)) #(numSamples, T-1, 11)
 
-
+# model = Model(inputs= hugeArray_train, outputs = hugeArray_train_target)
 model = Sequential()
 # training matrix (hugeArray) has dimension (numSamples, T-1, 11)
 # batchSize = numSamples = 1000 <--- This is where the 1000 comes from
 # T-1 = 198  <--- Source of 198
 # 11 <--- number of features
 # model.add(LSTM(sp.shape(hugeArray_train)[2], input_shape= sp.shape(hugeArray_train[0]) ) )
-# model.add(Dense(sp.shape(hugeArray_train)[2]*2, input_shape= sp.shape(hugeArray_train[0]), activation='relu'))
+model.add(Dense(sp.shape(hugeArray_train)[2], input_shape= sp.shape(hugeArray_train[0]), activation='linear'))
 # model.add(LeakyReLU(alpha=0.3))
-model.add(LeakyReLU(input_shape = sp.shape(hugeArray_train[0]),alpha=1))
-model.add(LeakyReLU(alpha=1))
-model.add(LeakyReLU(alpha=1))
-model.add(LeakyReLU(alpha=1))
-model.add(LeakyReLU(alpha=1))
-model.add(LeakyReLU(alpha=1))
+# model.add(LeakyReLU(input_shape = sp.shape(hugeArray_train[0]),alpha=1))
+print(hugeArray_train[0])
+model.add(LeakyReLU(alpha=0.3))
+# model.add(Dense(sp.shape(hugeArray_train)[2], input_shape = sp.shape(hugeArray_train[0])))
+# model.add(Dense(sp.shape(hugeArray_train)[2]))
+#
+# model.add(LeakyReLU(alpha=1))
+# model.add(LeakyReLU(alpha=1))
+# model.add(LeakyReLU(alpha=1))
+# model.add(LeakyReLU(alpha=1))
 
 # test matrix has dimension (numSamples, T-1, 11)
 
@@ -121,14 +124,16 @@ model.add(LeakyReLU(alpha=1))
 #     model.add(Dense(len(hugeArray_train[0]), activation='relu'))
 
 #Compile:
-opt = tf.keras.optimizers.SGD(lr=0.001, decay=1e-6, momentum=0.9, nesterov=True)
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
 
 model.compile(loss= 'mean_absolute_percentage_error',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
+
+
 # loss: 0.1379 - mean_absolute_percentage_error: 99.3193 - val_loss: 0.1622 - val_mean_absolute_percentage_error: 98.5299
-history = model.fit(hugeArray_train, hugeArray_train_target, batch_size= batchSize, epochs=numEpochs,
-                    validation_data = (hugeArray_test, hugeArray_test_target),
+history = model.fit(hugeArray_train, sp.zeros((numSamples,T-1,9)), batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (hugeArray_test, sp.zeros((numSamples,T-1,9))),
                     use_multiprocessing = True)
 # lReLU_weights1 = model.layers[0].get_weights()[0]
 # lReLU_weights2 = model.layers[1].get_weights()[0]
@@ -156,3 +161,4 @@ if plotHistory == True:
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
     plt.show()
+model.summary()

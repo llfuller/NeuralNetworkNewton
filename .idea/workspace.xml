@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Convergence_BestCase_Kinematic_1Layer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_BestCase_Kinematic_1Layer_Linear.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_18Layers_Accel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_1Layers_Accel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_1LinearLayer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_1LinearLayers_NearUnity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_2Layers_Accel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_4Layers_Accel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_4Layers_LeakyReLU_Accel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_4LinearLayers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_4ReLULayers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_500Sample_4ReLULayers_NearUnity.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_50Sample_1LinearLayers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_50Sample_4LinearLayers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Convergence_Kinematic_50Sample_4ReLULayers.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Net_Single_Timestep.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RNN_LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RNN_LSTM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +48,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PredictState.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Net_Single_Kinematic_Timestep.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -49,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RNN_LSTM">
+  <component name="RunManager" selected="Python.Net_Single_Kinematic_Timestep">
     <configuration name="CheckConservation" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,6 +102,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CheckPosition.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Net_Single_Kinematic_Timestep" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Single_Kinematic_Timestep.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Net_Single_Timestep" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Single_Timestep.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -332,6 +392,8 @@
       <item itemvalue="Python.VisualizeModel" />
       <item itemvalue="Python.RNN_5" />
       <item itemvalue="Python.RNN_LSTM" />
+      <item itemvalue="Python.Net_Single_Timestep" />
+      <item itemvalue="Python.Net_Single_Kinematic_Timestep" />
       <item itemvalue="Python.PredictState" />
       <item itemvalue="Python.Sentdex Youtube Tutorial" />
       <item itemvalue="Python.Sentdex Youtube Tutorial Modified" />
@@ -398,15 +460,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RNN_LSTM.py</url>
-          <line>87</line>
+          <line>86</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Net_Single_Timestep.py</url>
+          <line>67</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="hugeArray_train" />
-        <watch expression="hugeArray_train_target" language="Python" />
         <watch expression="input_state" />
         <watch expression="prediction" language="Python" />
         <watch expression="target_state" />
