@@ -4,3 +4,5 @@ Sentdex Youtube Tutorial.py
 LabValuesIntermediate.npz
 LabValuesTrain.npz
 LabValuesTrain2.npz
+LabValues.npz
+*.npz

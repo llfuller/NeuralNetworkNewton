@@ -1,5 +1,6 @@
 import scipy as sp
 from scipy.stats import uniform as uni
+import CalculateConserved as CalcConsd
 import time
 import matplotlib.pyplot as plt
 
@@ -18,33 +19,6 @@ numTrials = 10000
 # Letter "a" in variable name means quantity is in aligned (mass 1 on +x axis) CM frame
 # Letter "n" is "not aligned"/unaligned frame
 # Letter "L" is lab frame (CM velocity nonzero)
-
-def energy(m1, m2, v1, v2):
-    v1_norm_squared = sp.array([sp.power(v1[trial][0],2) + sp.power(v1[trial][1],2) for trial in range(len(v1))])
-    v2_norm_squared = sp.array([sp.power(v2[trial][0],2) + sp.power(v2[trial][1],2) for trial in range(len(v2))])
-    E1 = sp.multiply(0.5,  sp.multiply(m1,v1_norm_squared))
-    E2 = sp.multiply(0.5,  sp.multiply(m2,v2_norm_squared))
-    return sp.real(E1 + E2)
-def x_momentum(m1, m2, v1, v2):
-    v1_x = sp.array([v1[trial][0] for trial in range(len(v1))])
-    v2_x = sp.array([v2[trial][0] for trial in range(len(v2))])
-    p1 = sp.multiply(m1, v1_x)
-    p2 = sp.multiply(m2, v2_x)
-    return sp.real(p1 + p2)
-def y_momentum(m1, m2, v1, v2):
-    v1_y = sp.array([v1[trial][1] for trial in range(len(v1))])
-    v2_y = sp.array([v2[trial][1] for trial in range(len(v2))])
-    p1 = sp.multiply(m1, v1_y)
-    p2 = sp.multiply(m2, v2_y)
-    return sp.real(p1 + p2)
-def conservation(a_i, a_f):
-    # print("a_i: " +str(a_i[0]))
-    # print("a_f: " +str(a_f[0]))
-    # print("error: " +str(sp.fabs(sp.divide((a_i - a_f),a_i))[0]))
-    return str( False not in (sp.isclose(a_i,a_f)))
-def position(v_arr,t,pos_init):
-    # v_arr is dimension (numTrials, 2)
-    return None
 
 #===========================================
 #
@@ -93,7 +67,7 @@ InitialPosition1a = sp.array([x1a_Arr,y1a_Arr])
 InitialPosition2a = sp.array([x2a_Arr,y2a_Arr])
 
 # Initial energy in CM frame
-E_i = energy(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
+E_i = CalcConsd.energy(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
 
 # Final states (after collision) with vector dimension (numTrials):
 m2Overm1Times2 = sp.multiply(2,sp.divide(m2_Arr,m1_Arr))
@@ -103,12 +77,12 @@ v2a_total_f = sp.multiply(-1,sp.multiply(sp.divide(m1_Arr,m2_Arr),v1a_total_f))
 v1a_f = sp.array( [v1a_total_f, sp.zeros(numTrials)])
 v2a_f = sp.array( [v2a_total_f, sp.zeros(numTrials)])
 
-E_i = energy(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
-E_f = energy(m1_Arr,m2_Arr,sp.transpose(v1a_f),sp.transpose(v2a_f))
-p_x_i = x_momentum(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
-p_y_i = y_momentum(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
-p_x_f = x_momentum(m1_Arr,m2_Arr,sp.transpose(v1a_f),sp.transpose(v2a_f))
-p_y_f = y_momentum(m1_Arr,m2_Arr,sp.transpose(v1a_f),sp.transpose(v2a_f))
+E_i = CalcConsd.energy(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
+E_f = CalcConsd.energy(m1_Arr,m2_Arr,sp.transpose(v1a_f),sp.transpose(v2a_f))
+p_x_i = CalcConsd.x_momentum(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
+p_y_i = CalcConsd.y_momentum(m1_Arr,m2_Arr,sp.transpose(v1a),sp.transpose(v2a))
+p_x_f = CalcConsd.x_momentum(m1_Arr,m2_Arr,sp.transpose(v1a_f),sp.transpose(v2a_f))
+p_y_f = CalcConsd.y_momentum(m1_Arr,m2_Arr,sp.transpose(v1a_f),sp.transpose(v2a_f))
 
 #===========================================
 #
@@ -164,12 +138,12 @@ InitialPosition2L = InitialPosition2n
 # Lab Frame Conserved Quantities
 #
 #===========================================
-E_i = energy(m1_Arr,m2_Arr,v1L,v2L)
-E_f = energy(m1_Arr,m2_Arr,v1L_f,v2L_f)
-p_x_i = x_momentum(m1_Arr,m2_Arr,v1L,v2L)
-p_y_i = y_momentum(m1_Arr,m2_Arr,v1L,v2L)
-p_x_f = x_momentum(m1_Arr,m2_Arr,v1L_f,v2L_f)
-p_y_f = y_momentum(m1_Arr,m2_Arr,v1L_f,v2L_f)
+E_i = CalcConsd.energy(m1_Arr,m2_Arr,v1L,v2L)
+E_f = CalcConsd.energy(m1_Arr,m2_Arr,v1L_f,v2L_f)
+p_x_i = CalcConsd.x_momentum(m1_Arr,m2_Arr,v1L,v2L)
+p_y_i = CalcConsd.y_momentum(m1_Arr,m2_Arr,v1L,v2L)
+p_x_f = CalcConsd.x_momentum(m1_Arr,m2_Arr,v1L_f,v2L_f)
+p_y_f = CalcConsd.y_momentum(m1_Arr,m2_Arr,v1L_f,v2L_f)
 
 #===========================================
 #
