@@ -8,6 +8,9 @@ from tensorflow.keras.models import load_model
 #Observations: Larger, wider networks => Slower real time and epoch convergence to zero inaccuracy
 #              Quicker convergence initially
 #              Multiplication rule learned easily (2 decimal places for shallow narrow network!
+#              Has a very hard time learning from full zero target
+#              Easily learns identity weights for target = input, as well as alternating 5 rule
+#              Maybe creating a custom cost function would help?
 
 plotHistory = True
 batchSize = 32
@@ -15,14 +18,6 @@ numEpochs = 2000
 
 model = Sequential()
 model.add(Dense(9, input_dim = 9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
-model.add(Dense(9, activation='linear'))
 model.add(Dense(9, activation='linear'))
 
 #Compile:

@@ -4,13 +4,13 @@ from tensorflow.keras.layers import Dense, Flatten, LeakyReLU, Dropout, PReLU, S
 import scipy as sp
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
+import CalculateConserved as CalcConsd
 
-
-# Findings:
-# ReLU makes this get some stuck zero values. Because of this, its final convergence is bad for those zeros
+# Observations:
+# ReLU makes predictions get stuck with zero values. Because of this, its final convergence is bad for those zeros
 # For x, v, and dt given, 10,000 epochs to get to around 1% training MAPE (yikes!)
-# For 1 linear layer, we get there in above 10,000 epochs.
-# For 4 linear layers, we get there in about 3400 epochs:
+# For 1 linear layer and few training samples, we get there in above 10,000 epochs (but it's overfitting).
+# For 4 linear layers and few training samples, we get there in about 3400 epochs (but it's overfitting):
 # Input:
 # [[1. 1. 1.]
 #  [5. 3. 8.]
@@ -24,7 +24,7 @@ from tensorflow.keras.models import load_model
 #  [29.  3.  8.]
 #  [24.  9.  2.]]
 # 7500 epochs for 4 leaky ReLU layers, but it convergences very cleanly (training MAPE=0.0782 after 10,000 epochs)
-# The validation MAPE is horrible
+# The validation MAPE is horrible unless we include a lot of training data.
 # If using an outlier (30,000) then the model converges very poorly for a majority of the other elements:
 # Input:
 # [[1.e+00 1.e+00 1.e+00 3.e+04]
@@ -48,6 +48,13 @@ from tensorflow.keras.models import load_model
 # Best case: about 7.5% mean inaccuracy
 #    1, 1, 1, 1
 # For 0.1, 0.1, 0.1, 0.1: lots of fluctuation between 3% and 10%. If you look at the numbers, it's predicting very well!
+# The further the variable scales are from each other or the closer one is to zero, the worse it does.
+# When a variable stays constant, it has a better chance of staying constant in prediction
+# Best convergence seems to be near unity (say 1 or 0.1) for all variables
+# Training on huge variation (10 all) and validating on small variation (0.1 all) doesn't converge well. It has a minimum
+#    at around 170 epochs though.
+# Training on 5000 samples of (0,0.1) and validating on 5000 (0,100000) gives validation MAPE of 149 (but it's several orders of magnitude off for position)
+# Also bad when both windows are (0,1000). (0,1) is really the only good choice for convergence at current learning rate and with 4 linear dense layers.
 
 plotHistory = True
 batchSize = 32
@@ -56,36 +63,27 @@ numEpochs = 1000
 # row: time; col: x, v, dt
 numSamples = 500
 # meters and seconds
-randomPositions  = sp.multiply(sp.rand(numSamples,1),0.1)
-randomVelocities = sp.multiply(sp.rand(numSamples,1),0.1)
-randomAccels = sp.multiply(sp.rand(numSamples,1),0.1)
-randomDeltaTs    = sp.multiply(sp.rand(numSamples,1),0.1)
+randomPositions  = sp.multiply(sp.rand(numSamples,1),1)
+randomVelocities = sp.multiply(sp.rand(numSamples,1),1)
+randomAccels = sp.multiply(sp.rand(numSamples,1),1)
+randomDeltaTs    = sp.multiply(sp.rand(numSamples,1),1)
 state_input = sp.hstack((randomPositions,randomVelocities,randomAccels, randomDeltaTs))
 state_output = sp.hstack((randomPositions+sp.multiply(randomVelocities,randomDeltaTs)+sp.multiply(sp.multiply(randomAccels,0.5),sp.power(randomDeltaTs,2))
                           ,randomVelocities+sp.multiply(randomDeltaTs,randomAccels),randomAccels, randomDeltaTs))
-randomPositions_val  = sp.multiply(sp.rand(numSamples,1),0.1)
-randomVelocities_val = sp.multiply(sp.rand(numSamples,1),0.1)
-randomAccels_val = sp.multiply(sp.rand(numSamples,1),0.1)
-randomDeltaTs_val    = sp.multiply(sp.rand(numSamples,1),0.1)
+randomPositions_val  = sp.multiply(sp.rand(numSamples,1),1)
+randomVelocities_val = sp.multiply(sp.rand(numSamples,1),1)
+randomAccels_val = sp.multiply(sp.rand(numSamples,1),1)
+randomDeltaTs_val    = sp.multiply(sp.rand(numSamples,1),1)
 val_input = sp.hstack((randomPositions_val,randomVelocities_val,randomAccels_val, randomDeltaTs_val))
 val_output = sp.hstack((randomPositions_val+sp.multiply(randomVelocities_val,randomDeltaTs_val)+sp.multiply(sp.multiply(randomAccels_val,0.5),sp.power(randomDeltaTs_val,2))
                           ,randomVelocities_val+sp.multiply(randomDeltaTs_val,randomAccels_val),randomAccels_val,randomDeltaTs_val))
-# state_input = sp.array([[1.0,1,1],[5,3,8],[6,9,2],[4,7,3],[9,9,9],[17,2,6]])
-# state_output = sp.array([[2.0,1,1],[29,3,8],[24,9,2],[25,7,3],[90,9,9],[29,2,6]])
-# val_input = sp.array([[5.0,2,7],[14,1,10],[-7,8,13]])
-# val_output = sp.array([[19.0,2,7],[24,1,10],[97,8,13]])
 # Can this figure out the rule x_f = x_i + v*dt?
 
-
-dropoutRate = 0.0
 model = Sequential()
 model.add(Dense(4, input_dim = 4, activation='linear'))
 model.add(Dense(4, activation='linear'))
 model.add(Dense(4, activation='linear'))
 model.add(Dense(4, activation='linear'))
-
-
-
 
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
