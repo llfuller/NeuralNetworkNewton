@@ -19,8 +19,8 @@ start_time = time.time()
 d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
-plotHistory = True
-numSamples = 10000
+plotHistory = False
+numSamples = 100000
 T = 199 # max number of timesteps in matrix
 batchSize = 32
 numEpochs = 1000 # Converges around 300 for LeakyReLU + 3 Dense
@@ -84,30 +84,30 @@ target_Arr_val = sp.dstack((Velocity1L_firstLast_val, Velocity2L_firstLast_val, 
 #   Network
 #===============================================================================================================
 
-model = Sequential()
-model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
-model.add(LeakyReLU(alpha=0.3))
-for i in range(5):
-    model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
-    model.add(LeakyReLU(alpha=0.3))
-model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
-model.add(LeakyReLU(alpha=0.3))
-
-#Compile:
-opt = tf.keras.optimizers.Adam(lr=1.5e-3, decay=1e-6)
-model.compile(loss= 'mean_absolute_percentage_error',
-              optimizer = opt,
-              metrics = ['mean_absolute_percentage_error'])
-history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
-                    validation_data = (input_Arr_val, target_Arr_val),
-                    use_multiprocessing = True)
-
-model.save("NCEE-Output\\trainedModel_NCEE.hd5")
+# model = Sequential()
+# model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+# model.add(LeakyReLU(alpha=0.3))
+# for i in range(5):
+#     model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
+#     model.add(LeakyReLU(alpha=0.3))
+# model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
+# model.add(LeakyReLU(alpha=0.3))
+#
+# #Compile:
+# opt = tf.keras.optimizers.Adam(lr=1.5e-3, decay=1e-6)
+# model.compile(loss= 'mean_absolute_percentage_error',
+#               optimizer = opt,
+#               metrics = ['mean_absolute_percentage_error'])
+# history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
+#                     validation_data = (input_Arr_val, target_Arr_val),
+#                     use_multiprocessing = True)
+#
+# model.save("NCEE-Output\\trainedModel_NCEE.hd5")
 
 #===============================================================================================================
 #   E and P Prediction and Comparison
 #===============================================================================================================
-# model = load_model("trainedModel_temp.hd5")
+model = load_model("trainedModel_temp.hd5")
 model.evaluate(x=input_Arr_val, y=target_Arr_val)
 prediction = model.predict(input_Arr_val)
 predicted_v1 = prediction[:,0:2]
@@ -158,7 +158,7 @@ horiz_Axis = sp.linspace(1,numSamples+1, numSamples)
 
 # Plotting conserved quantity error ratios over all validation samples
 plt.figure()
-plt.scatter(horiz_Axis,E_val_ratio,s=2,color='g')
+plt.scatter(horiz_Axis,E_val_ratio,s=0.2,color='g')
 plt.xlabel("Index")
 plt.ylabel("Energy Error Ratio")
 plt.title("Energy Error Ratio")
@@ -166,7 +166,7 @@ axes = plt.gca()
 axes.set_ylim(-1.2, 1)
 plt.savefig("NCEE-Output\\NCEE-EWith"+str(numSamples)+"SamplesAnd"+str(numEpochs)+"Epochs.png")
 plt.figure()
-plt.scatter(horiz_Axis,px_val_ratio,s=2,color='b')
+plt.scatter(horiz_Axis,px_val_ratio,s=0.2,color='b')
 plt.xlabel("Index")
 plt.ylabel("X Momentum Error Ratio")
 plt.title("X Momentum Error Ratio")
@@ -174,7 +174,7 @@ axes = plt.gca()
 axes.set_ylim(-1.2, 1)
 plt.savefig("NCEE-Output\\NCEE-p_xWith"+str(numSamples)+"SamplesAnd"+str(numEpochs)+"Epochs.png")
 plt.figure()
-plt.scatter(horiz_Axis,py_val_ratio,s=2,color='c')
+plt.scatter(horiz_Axis,py_val_ratio,s=0.2,color='c')
 plt.xlabel("Index")
 plt.ylabel("Y Momentum Error Ratio")
 plt.title("Y Momentum Error Ratio")
@@ -206,6 +206,34 @@ if plotHistory == True:
 model.summary()
 # plt.show()
 
+# Distribution Histograms
+plt.figure()
+plt.hist(E_val_ratio,color='g',range=(-1.5,1.5),density=True,bins=1000)
+plt.savefig("NCEE-Output\\NCEE-EHist" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+plt.figure()
+plt.hist(px_val_ratio,color='b',range=(-1.5,1.5),density=True,bins=1000)
+plt.savefig("NCEE-Output\\NCEE-PxHist" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+plt.figure()
+plt.hist(py_val_ratio,color='c',range=(-1.5,1.5),density=True,bins=1000)
+plt.savefig("NCEE-Output\\NCEE-PyHist" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+
+# Percentage within 10%
+E_val_ratio_copy = sp.array(list(E_val_ratio)) # by value, not by reference
+px_val_ratio_copy = sp.array(list(px_val_ratio))
+py_val_ratio_copy = sp.array(list(py_val_ratio))
+E_val_ratio_copy[sp.fabs(E_val_ratio_copy)>0.1]=0
+px_val_ratio_copy[sp.fabs(px_val_ratio_copy)>0.1]=0
+py_val_ratio_copy[sp.fabs(py_val_ratio_copy)>0.1]=0
+E_val_ratio_copy[sp.fabs(E_val_ratio)<=0.1]=1
+px_val_ratio_copy[sp.fabs(px_val_ratio)<=0.1]=1
+py_val_ratio_copy[sp.fabs(py_val_ratio)<=0.1]=1
+
+percentageWithin10Percent = sp.sum( sp.multiply(
+                                            sp.multiply(E_val_ratio_copy,
+                                            px_val_ratio_copy),
+                                        py_val_ratio_copy))
+percentageWithin10Percent/=numSamples
+print("Percentage within 10% of true value for all conserved quantities: "+ str(percentageWithin10Percent*100)+"%")
 #===============================================================================================================
 #   File Output
 #===============================================================================================================
@@ -220,6 +248,7 @@ outputFile.write("First array expected, second array predicted:\n")
 outputFile.write("E"+str(E_val[0:3])+";"+str(E_pred[0:3])+";"
                  +"\npx"+str(px_val[0:3])+";"+str(px_pred[0:3])+";"
                  +"\npy"+str(py_val[0:3])+";"+str(py_pred[0:3])+";")
+outputFile.write("\nPercentage within 10% of true value for all conserved quantities: "+ str(percentageWithin10Percent*100)+"%")
 outputFile.close()
 
 print("Time to run: ")

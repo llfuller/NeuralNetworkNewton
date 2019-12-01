@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 
 start_time = time.time()
-numTrials = 10000
+numTrials = 100000
 
 # Notation:
 # Letter "a" in variable name means quantity is in aligned (mass 1 on +x axis) CM frame
