@@ -1,0 +1,18 @@
+Samples:10000; Epochs:1000
+Runtime: 2071.2285799980164 seconds
+Energy median: -0.04345757247448243
+X Momentum median: -0.015780911425750516
+Y Momentum median: -0.018855869535836876
+First array expected, second array predicted:
+E[ 55.12962998 594.16806271 104.81912192];[ 57.86891861 474.46427583  95.4672174 ];
+px[ -8.61240544 -63.48377172 -16.73771089];[ -6.0312014 -63.48369   -16.898691 ];
+py[-23.11247526 -70.34859372  -7.67319354];[-23.932453 -54.095287  -9.149207];
+
+model = Sequential()
+model.add(Dense(sp.shape(input_Arr)[1]*8, input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+for i in range(2):
+    model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
+model.add(LeakyReLU(alpha=0.3))

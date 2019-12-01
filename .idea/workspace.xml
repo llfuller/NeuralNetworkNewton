@@ -2,49 +2,137 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-EWith10000SamplesAnd10000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-LossConv10000SamplesAnd10000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-p_xWith10000SamplesAnd10000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-p_yWith10000SamplesAnd10000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEEOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/Energy 11302019720PM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/LossConvergence 11302019720PM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/Setup for 11302019720PM.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/X Momentum 11302019720PM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/Y Momentum 11302019720PM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RunSimulationThenNCEE.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runtime analysis.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/10LeakyReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/1LeakyReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/2LeakyReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/3LeakyReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Number of Leaky ReLU Layers/4LeakyReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-LossConv10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/NCEE-LossConv10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 1 Layer Shorter/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/NCEE-LossConv10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Slightly Longer Funnel (not good)/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/NCEE-LossConv10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model Wider (not good)/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/NCEE-LossConv10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWideReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/SandwichWiderReLU/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE_Source_Unsure.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE_Source_Unsure.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE_Source_Unsure.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE_Source_Unsure.hd5/variables/variables.index" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckConservation.py" beforeDir="false" afterPath="$PROJECT_DIR$/CheckConservation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNN_LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RNN_LSTM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-LossConv10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_NCEE.hd5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.index" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
@@ -582,7 +670,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py</url>
-          <line>136</line>
+          <line>137</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>

@@ -23,7 +23,7 @@ plotHistory = True
 numSamples = 10000
 T = 199 # max number of timesteps in matrix
 batchSize = 32
-numEpochs = 100 # Converges around 300 for LeakyReLU + 3 Dense
+numEpochs = 1000 # Converges around 300 for LeakyReLU + 3 Dense
 
 #===============================================================================================================
 #   Import Simulation Data and Preprocess
@@ -87,12 +87,14 @@ target_Arr_val = sp.dstack((Velocity1L_firstLast_val, Velocity2L_firstLast_val, 
 model = Sequential()
 model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
+for i in range(5):
+    model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
-model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
-model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
 
 #Compile:
-opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+opt = tf.keras.optimizers.Adam(lr=1.5e-3, decay=1e-6)
 model.compile(loss= 'mean_absolute_percentage_error',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
@@ -105,7 +107,7 @@ model.save("NCEE-Output\\trainedModel_NCEE.hd5")
 #===============================================================================================================
 #   E and P Prediction and Comparison
 #===============================================================================================================
-
+# model = load_model("trainedModel_temp.hd5")
 model.evaluate(x=input_Arr_val, y=target_Arr_val)
 prediction = model.predict(input_Arr_val)
 predicted_v1 = prediction[:,0:2]
@@ -127,7 +129,6 @@ py_pred = CalcConsd.y_momentum(predicted_m1, predicted_m2, predicted_v1, predict
 
 
 # For plotting energy and momentum ratio of target to predicted states after training is done
-horiz_Axis = sp.linspace(1,numSamples+1, numSamples)
 E_val_ratio = sp.divide((E_pred-E_val),E_val)
 px_val_ratio = sp.divide((px_pred-px_val),px_val)
 py_val_ratio = sp.divide((py_pred-py_val),py_val)
@@ -153,10 +154,11 @@ print(py_pred[0:3])
 #===============================================================================================================
 #   Plotting
 #===============================================================================================================
+horiz_Axis = sp.linspace(1,numSamples+1, numSamples)
 
 # Plotting conserved quantity error ratios over all validation samples
 plt.figure()
-plt.scatter(horiz_Axis,E_val_ratio,s=6,color='g')
+plt.scatter(horiz_Axis,E_val_ratio,s=2,color='g')
 plt.xlabel("Index")
 plt.ylabel("Energy Error Ratio")
 plt.title("Energy Error Ratio")
@@ -164,7 +166,7 @@ axes = plt.gca()
 axes.set_ylim(-1.2, 1)
 plt.savefig("NCEE-Output\\NCEE-EWith"+str(numSamples)+"SamplesAnd"+str(numEpochs)+"Epochs.png")
 plt.figure()
-plt.scatter(horiz_Axis,px_val_ratio,s=6,color='b')
+plt.scatter(horiz_Axis,px_val_ratio,s=2,color='b')
 plt.xlabel("Index")
 plt.ylabel("X Momentum Error Ratio")
 plt.title("X Momentum Error Ratio")
@@ -172,7 +174,7 @@ axes = plt.gca()
 axes.set_ylim(-1.2, 1)
 plt.savefig("NCEE-Output\\NCEE-p_xWith"+str(numSamples)+"SamplesAnd"+str(numEpochs)+"Epochs.png")
 plt.figure()
-plt.scatter(horiz_Axis,py_val_ratio,s=6,color='c')
+plt.scatter(horiz_Axis,py_val_ratio,s=2,color='c')
 plt.xlabel("Index")
 plt.ylabel("Y Momentum Error Ratio")
 plt.title("Y Momentum Error Ratio")
@@ -199,7 +201,7 @@ if plotHistory == True:
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
     axes = plt.gca()
-    axes.set_ylim(0, 110)
+    axes.set_ylim(0, 100)
     plt.savefig("NCEE-Output\\NCEE-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
 model.summary()
 # plt.show()
