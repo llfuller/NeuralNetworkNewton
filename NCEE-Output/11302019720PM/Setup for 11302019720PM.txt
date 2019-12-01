@@ -1,0 +1,31 @@
+11302019720PM
+
+1000 samples
+10,000 epochs
+
+Energy median: -0.23923192252003933
+X Momentum median: -0.18895071042342038
+Y Momentum median: -0.056469714575142466
+
+E
+[ 83.77575256 610.29484582  82.43303394]
+[ 30.51867632 595.76798797  65.26314871]
+px
+[-41.88766306 -77.17338072 -18.61084233]
+[-25.412363 -77.87173  -23.90617 ]
+py
+[ -6.03647218 -65.20542147 -20.88751183]
+[  0.10750088 -62.189266   -16.102877  ]
+
+
+top: actual
+lower: predicted
+
+Network:
+
+model = Sequential()
+model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
+model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
+model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))

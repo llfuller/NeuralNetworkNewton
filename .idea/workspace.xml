@@ -2,14 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Energy_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Loss_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Momentum_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-EWith10000SamplesAnd10000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-LossConv10000SamplesAnd10000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-p_xWith10000SamplesAnd10000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEE-p_yWith10000SamplesAnd10000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/1000s1000e/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/Energy 11302019720PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/LossConvergence 11302019720PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/Setup for 11302019720PM.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/X Momentum 11302019720PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/11302019720PM/Y Momentum 11302019720PM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NCEE.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd100Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RunSimulationThenNCEE.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/runtime analysis.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CalculateConserved.py" beforeDir="false" afterPath="$PROJECT_DIR$/CalculateConserved.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Single_Timestep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Timestep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckConservation.py" beforeDir="false" afterPath="$PROJECT_DIR$/CheckConservation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RNN_LSTM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RNN_LSTM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
@@ -37,7 +72,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/RunSimulationThenNCEE.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -56,7 +91,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.RNN_LSTM">
+  <component name="RunManager" selected="Python.Net_Collision_Endpoint_Estimation">
     <configuration name="CalculateConserved" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,6 +147,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CheckPosition.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Net_Collision_Endpoint_Estimation" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -330,6 +386,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="RunSimulationThenNCEE" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RunSimulationThenNCEE.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Sentdex Youtube Tutorial Modified" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -425,6 +502,8 @@
       <item itemvalue="Python.VisualizeModel" />
       <item itemvalue="Python.RNN_5" />
       <item itemvalue="Python.RNN_LSTM" />
+      <item itemvalue="Python.Net_Collision_Endpoint_Estimation" />
+      <item itemvalue="Python.RunSimulationThenNCEE" />
       <item itemvalue="Python.Net_Single_Timestep" />
       <item itemvalue="Python.Net_Single_Kinematic_Timestep" />
       <item itemvalue="Python.PredictState" />
@@ -467,11 +546,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SimulateCollisions.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Sentdex Youtube Tutorial.py</url>
           <line>31</line>
           <option name="timeStamp" value="9" />
@@ -493,13 +567,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RNN_LSTM.py</url>
-          <line>86</line>
+          <line>87</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Net_Single_Timestep.py</url>
           <line>62</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SimulateCollisions.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py</url>
+          <line>136</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

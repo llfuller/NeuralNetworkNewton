@@ -4,7 +4,8 @@ from tensorflow.keras.layers import Dense, Flatten, LeakyReLU, Dropout, PReLU, S
 import scipy as sp
 import matplotlib.pyplot as plt
 from tensorflow.keras.models import load_model
-# LSTM to learn collision location and behavior
+# This code is faulty because it learns using collision point, which does carry properly into the next timestep
+#   This code doesn't have an LSTM, which may help it use the collision point properly.
 
 plotHistory = True
 
@@ -12,7 +13,7 @@ d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
 numSamples = 1000
-T = 199 # number of timesteps in matrix
+T = 199 # max number of timesteps in matrix
 batchSize = 32
 numEpochs = 100
 
@@ -68,19 +69,19 @@ hugeArray_test_target = sp.dstack((Position1L_t_test[:,1:], Position2L_t_test[:,
 print(sp.shape(hugeArray_train))
 
 #==================================================
-# Predict next state of system from current state
-input_state = sp.array([hugeArray_train[0]])
-target_state = sp.array([hugeArray_train_target[0]])
-model = load_model('trainedModel_temp.hd5')
-model.evaluate(x=input_state, y=target_state)
-prediction = model.predict(input_state)
-print("Axes: (row: time, column: feature)")
-print("Input: ")
-print(input_state)
-print("Prediction: ")
-print(prediction)
-print("Actual target state: ")
-print(target_state)
+# # Predict next state of system from current state
+# input_state = sp.array([hugeArray_train[0]])
+# target_state = sp.array([hugeArray_train_target[0]])
+# model = load_model('trainedModel_temp.hd5')
+# model.evaluate(x=input_state, y=target_state)
+# prediction = model.predict(input_state)
+# print("Axes: (row: time, column: feature)")
+# print("Input: ")
+# print(input_state)
+# print("Prediction: ")
+# print(prediction)
+# print("Actual target state: ")
+# print(target_state)
 
 #=================================================
 
@@ -105,9 +106,7 @@ model.add(LeakyReLU(alpha=0.3))
 # model.add(Dense(sp.shape(hugeArray_train)[2]))
 #
 # model.add(LeakyReLU(alpha=1))
-# model.add(LeakyReLU(alpha=1))
-# model.add(LeakyReLU(alpha=1))
-# model.add(LeakyReLU(alpha=1))
+
 
 # test matrix has dimension (numSamples, T-1, 11)
 
