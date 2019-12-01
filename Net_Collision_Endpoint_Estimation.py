@@ -19,7 +19,7 @@ start_time = time.time()
 d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
-plotHistory = False
+plotHistory = True
 numSamples = 100000
 T = 199 # max number of timesteps in matrix
 batchSize = 32
@@ -84,30 +84,30 @@ target_Arr_val = sp.dstack((Velocity1L_firstLast_val, Velocity2L_firstLast_val, 
 #   Network
 #===============================================================================================================
 
-# model = Sequential()
-# model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
-# model.add(LeakyReLU(alpha=0.3))
-# for i in range(5):
-#     model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
-#     model.add(LeakyReLU(alpha=0.3))
-# model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
-# model.add(LeakyReLU(alpha=0.3))
-#
-# #Compile:
-# opt = tf.keras.optimizers.Adam(lr=1.5e-3, decay=1e-6)
-# model.compile(loss= 'mean_absolute_percentage_error',
-#               optimizer = opt,
-#               metrics = ['mean_absolute_percentage_error'])
-# history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
-#                     validation_data = (input_Arr_val, target_Arr_val),
-#                     use_multiprocessing = True)
-#
-# model.save("NCEE-Output\\trainedModel_NCEE.hd5")
+model = Sequential()
+model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+for i in range(5):
+    model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1.5e-3, decay=1e-6)
+model.compile(loss= 'mean_absolute_percentage_error',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (input_Arr_val, target_Arr_val),
+                    use_multiprocessing = True)
+
+model.save("NCEE-Output\\trainedModel_NCEE.hd5")
 
 #===============================================================================================================
 #   E and P Prediction and Comparison
 #===============================================================================================================
-model = load_model("trainedModel_temp.hd5")
+# model = load_model("trainedModel_temp.hd5")
 model.evaluate(x=input_Arr_val, y=target_Arr_val)
 prediction = model.predict(input_Arr_val)
 predicted_v1 = prediction[:,0:2]

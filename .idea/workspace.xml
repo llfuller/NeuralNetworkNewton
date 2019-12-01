@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EHist100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-PxHist100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-PyHist100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-EWith10000SamplesAnd1000Epochs.png" beforeDir="false" afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-p_xWith10000SamplesAnd1000Epochs.png" beforeDir="false" afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-p_yWith10000SamplesAnd1000Epochs.png" beforeDir="false" afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Actually Best Sandwich Model Longer/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
