@@ -156,7 +156,7 @@ for trainOrIntermediateFile in [0,1]:
     print("Beginning Path Phase: ")
     print(str(time.time() - start_time)+" seconds")
 
-    timeStepOfCollision = 99+1
+    timeStepOfCollision = 2+1
     timeSteps = 2*(timeStepOfCollision) - 1
     # Dimension (timeSteps)
     t = sp.linspace(0, sp.multiply(2,t_col), timeSteps)

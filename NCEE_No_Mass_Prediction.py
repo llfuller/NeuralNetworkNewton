@@ -19,12 +19,11 @@ start_time = time.time()
 d_train = sp.load("LabValuesTrain.npz")
 d_test = sp.load("LabValuesIntermediate.npz")
 
-plotHistory = False
-doJitter = False
+plotHistory = True
 numSamples = 10000
 T = 199 # max number of timesteps in matrix
 batchSize = 32
-numEpochs = 1000 # Converges around 300 for LeakyReLU + 3 Dense
+numEpochs = 100 # Converges around 300 for LeakyReLU + 3 Dense
 
 #===============================================================================================================
 #   Import Simulation Data and Preprocess
@@ -77,59 +76,47 @@ p_y_f_val=d_test['arr_9'][:numSamples]
 
 # Dimensions of (samples, timesteps, features)
 input_Arr = sp.dstack((Velocity1L_firstLast, Velocity2L_firstLast, m1_Arr, m2_Arr))[:,0,:]
-target_Arr = sp.dstack((Velocity1L_firstLast, Velocity2L_firstLast, m1_Arr, m2_Arr))[:,1,:]
+target_Arr = sp.dstack((Velocity1L_firstLast, Velocity2L_firstLast))[:,1,:]
 input_Arr_val = sp.dstack((Velocity1L_firstLast_val, Velocity2L_firstLast_val, m1_Arr_val, m2_Arr_val))[:,0,:]
-target_Arr_val = sp.dstack((Velocity1L_firstLast_val, Velocity2L_firstLast_val, m1_Arr_val, m2_Arr_val))[:,1,:]
+target_Arr_val = sp.dstack((Velocity1L_firstLast_val, Velocity2L_firstLast_val))[:,1,:]
 
 #===============================================================================================================
 #   Network
 #===============================================================================================================
 
-# # Training existing model. Comment out if you do not wish to do this.
-# # model = load_model("trainedModel_temp.hd5")
-#
-# model = Sequential()
-# model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
-# model.add(LeakyReLU(alpha=0.3))
-# for i in range(5):
-#     model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
-#     model.add(LeakyReLU(alpha=0.3))
-# model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
-# model.add(LeakyReLU(alpha=0.3))
-#
-# #Compile:
-# opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
-# model.compile(loss= 'mse',
-#               optimizer = opt,
-#               metrics = ['mean_absolute_percentage_error'])
-# history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
-#                     validation_data = (input_Arr_val, target_Arr_val),
-#                     use_multiprocessing = True)
-#
-# model.save("NCEE-Output\\trainedModel_NCEE.hd5")
+# Training existing model. Comment out if you do not wish to do this.
+model = load_model("trainedModel_temp.hd5")
+
+model = Sequential()
+model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+for i in range(5):
+    model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(target_Arr)[1], activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (input_Arr_val, target_Arr_val),
+                    use_multiprocessing = True)
+
+model.save("NCEE-Output\\trainedModel_NCEE.hd5")
 
 #===============================================================================================================
 #   E and P Prediction and Comparison
 #===============================================================================================================
-model = load_model("trainedModel_temp.hd5")
-if doJitter:
-    numJitter = 10
-    input_Arr_val_to_jitter = sp.array([input_Arr_val for i in range(numJitter)])
-    sigma_matrix = sp.multiply(sp.fabs(input_Arr_val_to_jitter),0)
-    jitteredMatrix = sp.random.normal(input_Arr_val_to_jitter, sigma_matrix)
-    prediction = sp.array([model.predict(jitteredMatrix[i,:,:]) for i in range(sp.shape(jitteredMatrix)[0])])
-    predicted_v1 = sp.median(prediction[:,:,0:2],axis=0)
-    predicted_v2 = sp.median(prediction[:,:,2:4],axis=0)
-    predicted_m1 = sp.median(prediction[:,:,4],axis=0)
-    predicted_m2 = sp.median(prediction[:,:,5],axis=0)
-    print(sp.shape(predicted_v1))
-else:
-    model.evaluate(x=input_Arr_val, y=target_Arr_val)
-    prediction = model.predict(input_Arr_val)
-    predicted_v1 = prediction[:,0:2]
-    predicted_v2 = prediction[:,2:4]
-    predicted_m1 = prediction[:,4]
-    predicted_m2 = prediction[:,5]
+# model = load_model("trainedModel_temp.hd5")
+model.evaluate(x=input_Arr_val, y=target_Arr_val)
+prediction = model.predict(input_Arr_val)
+predicted_v1 = prediction[:,0:2]
+predicted_v2 = prediction[:,2:4]
+predicted_m1 = m1_Arr_val[:,0]
+predicted_m2 = m2_Arr_val[:,0]
 
 # first time energy and momentum
 E_val = CalcConsd.energy(m1_Arr_val[:,0], m2_Arr_val[:,0], Velocity1L_firstLast_val[:,1,:],
@@ -146,15 +133,22 @@ py_pred = CalcConsd.y_momentum(predicted_m1, predicted_m2, predicted_v1, predict
 
 # For plotting energy and momentum ratio of target to predicted states after training is done
 E_val_ratio = sp.divide((E_pred-E_val),E_val)
+E_val_ratio_copy = sp.array(list(E_val_ratio[sp.fabs(E_val_ratio)<2.0]))
 px_val_ratio = sp.divide((px_pred-px_val),px_val)
+px_val_ratio_copy = sp.array(list(px_val_ratio[sp.fabs(px_val_ratio)<2.0]))
 py_val_ratio = sp.divide((py_pred-py_val),py_val)
+py_val_ratio_copy = sp.array(list(py_val_ratio[sp.fabs(py_val_ratio)<2.0]))
 # Statistics of conserved quantity prediction error (median used because a couple large outliers skew mean)
-E_val_ratio_median = sp.median(E_val_ratio)
-px_val_ratio_median = sp.median(px_val_ratio)
-py_val_ratio_median = sp.median(py_val_ratio)
+E_val_ratio_median = sp.median(E_val_ratio_copy)
+px_val_ratio_median = sp.median(px_val_ratio_copy)
+py_val_ratio_median = sp.median(py_val_ratio_copy)
 print("Energy median: "+str(E_val_ratio_median))
 print("X Momentum median: "+str(px_val_ratio_median))
 print("Y Momentum median: "+str(py_val_ratio_median))
+print("Energy stdDev: "+str(sp.std(E_val_ratio_copy)))
+print("X Momentum stdDev: "+str(sp.std(px_val_ratio_copy)))
+print("Y Momentum stdDev: "+str(sp.std(py_val_ratio_copy)))
+
 print("A value of negative 1 means the predicted value is a tiny fraction of the real amount")
 print("E")
 print(E_val[0:3])
@@ -171,7 +165,11 @@ print(py_pred[0:3])
 #   Plotting
 #===============================================================================================================
 horiz_Axis = sp.linspace(1,numSamples+1, numSamples)
-
+print("TEST:")
+print(sp.shape(horiz_Axis))
+print(sp.shape(E_val_ratio))
+print(sp.shape(px_val_ratio))
+print(sp.shape(py_val_ratio))
 # Plotting conserved quantity error ratios over all validation samples
 plt.figure()
 plt.scatter(horiz_Axis,E_val_ratio,s=0.2,color='g')

@@ -69,26 +69,33 @@ randomAccels = sp.multiply(sp.rand(numSamples,1),1)
 randomDeltaTs    = sp.multiply(sp.rand(numSamples,1),1)
 state_input = sp.hstack((randomPositions,randomVelocities,randomAccels, randomDeltaTs))
 state_output = sp.hstack((randomPositions+sp.multiply(randomVelocities,randomDeltaTs)+sp.multiply(sp.multiply(randomAccels,0.5),sp.power(randomDeltaTs,2))
-                          ,randomVelocities+sp.multiply(randomDeltaTs,randomAccels),randomAccels, randomDeltaTs))
+                          ,randomVelocities+sp.multiply(randomDeltaTs,randomAccels),randomAccels))
+# state_output = sp.hstack((randomPositions+sp.multiply(randomVelocities,randomDeltaTs)+sp.multiply(sp.multiply(randomAccels,0.5),sp.power(randomDeltaTs,2))
+#                           ,randomVelocities+sp.multiply(randomDeltaTs,randomAccels),randomAccels, randomDeltaTs))
 randomPositions_val  = sp.multiply(sp.rand(numSamples,1),1)
 randomVelocities_val = sp.multiply(sp.rand(numSamples,1),1)
 randomAccels_val = sp.multiply(sp.rand(numSamples,1),1)
 randomDeltaTs_val    = sp.multiply(sp.rand(numSamples,1),1)
 val_input = sp.hstack((randomPositions_val,randomVelocities_val,randomAccels_val, randomDeltaTs_val))
 val_output = sp.hstack((randomPositions_val+sp.multiply(randomVelocities_val,randomDeltaTs_val)+sp.multiply(sp.multiply(randomAccels_val,0.5),sp.power(randomDeltaTs_val,2))
-                          ,randomVelocities_val+sp.multiply(randomDeltaTs_val,randomAccels_val),randomAccels_val,randomDeltaTs_val))
+                          ,randomVelocities_val+sp.multiply(randomDeltaTs_val,randomAccels_val),randomAccels_val))
+# val_output = sp.hstack((randomPositions_val+sp.multiply(randomVelocities_val,randomDeltaTs_val)+sp.multiply(sp.multiply(randomAccels_val,0.5),sp.power(randomDeltaTs_val,2))
+#                           ,randomVelocities_val+sp.multiply(randomDeltaTs_val,randomAccels_val),randomAccels_val,randomDeltaTs_val))
 # Can this figure out the rule x_f = x_i + v*dt?
 
 model = Sequential()
 model.add(Dense(4, input_dim = 4, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(4, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(4, activation='linear'))
-model.add(Dense(4, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(3, activation='linear'))
 
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
 
-model.compile(loss= 'mean_absolute_percentage_error',
+model.compile(loss= 'mse',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
 
@@ -123,4 +130,5 @@ if plotHistory == True:
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
+    plt.savefig("NSKT_Loss_Convergence.png")
     plt.show()

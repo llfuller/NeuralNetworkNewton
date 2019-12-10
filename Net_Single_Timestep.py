@@ -18,12 +18,15 @@ numEpochs = 2000
 
 model = Sequential()
 model.add(Dense(9, input_dim = 9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
 
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
 
-model.compile(loss= 'mean_absolute_percentage_error',
+model.compile(loss= 'mse',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
 
@@ -37,7 +40,7 @@ for i in range(len(alternating5)):
     stateMultiplier[i,:] = i+1
 
 state_input = sp.multiply(sp.ones((2,9)), stateMultiplier)
-state_output = sp.multiply(alternating5,stateMultiplier)
+state_output = state_input+0*sp.multiply(alternating5,stateMultiplier)
 
 history = model.fit(state_input, state_output, batch_size= batchSize, epochs=numEpochs,
                     validation_data = (state_input, state_output),
@@ -69,5 +72,8 @@ if plotHistory == True:
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
+    axes=plt.gca()
+    #axes.set_ylim(0, 1)
+    plt.savefig("NST_Loss_Convergence.png")
     plt.show()
 

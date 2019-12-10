@@ -41,14 +41,18 @@ velocities_val_f = randomVelocities_val+sp.multiply(randomDeltaTs_val,randomAcce
 # Define initial and final state tensors
 if(trainOnAcceleration):
     state_input = sp.hstack((randomPositions,randomVelocities,randomAccels, randomDeltaTs))
-    state_output = sp.hstack((positions_f, velocities_f,randomAccels, randomDeltaTs))
+    # state_output = sp.hstack((positions_f, velocities_f,randomAccels, randomDeltaTs))
+    state_output = sp.hstack((positions_f, velocities_f,randomAccels))
     val_input = sp.hstack((randomPositions_val,randomVelocities_val,randomAccels_val, randomDeltaTs_val))
-    val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val,randomDeltaTs_val))
+    val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val))
+    # val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val,randomDeltaTs_val))
 else:
     state_input = sp.hstack((randomPositions,randomVelocities, randomDeltaTs))
-    state_output = sp.hstack((positions_f, velocities_f, randomDeltaTs))
+    state_output = sp.hstack((positions_f, velocities_f))
+    # state_output = sp.hstack((positions_f, velocities_f, randomDeltaTs))
     val_input = sp.hstack((randomPositions_val,randomVelocities_val, randomDeltaTs_val))
-    val_output = sp.hstack((positions_val_f,velocities_val_f,randomDeltaTs_val))
+    val_output = sp.hstack((positions_val_f,velocities_val_f))
+    # val_output = sp.hstack((positions_val_f,velocities_val_f,randomDeltaTs_val))
 # Can this figure out the rule x_f = x_i + v*dt? Let's see!
 
 #===============================================================================================================
@@ -62,12 +66,12 @@ model.add(Dense(dim, activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(dim, activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
-model.add(Dense(dim, activation='linear'))
+model.add(Dense(dim-1, activation='linear'))
 
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
 
-model.compile(loss= 'mean_absolute_percentage_error',
+model.compile(loss= 'mse',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
 
