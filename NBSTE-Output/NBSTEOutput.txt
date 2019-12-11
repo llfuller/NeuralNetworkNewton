@@ -1,0 +1,10 @@
+Samples:10000; Epochs:10
+Runtime: 31.347630739212036 seconds
+Energy median: 0.0
+X Momentum median: 0.0
+Y Momentum median: 0.0
+First array expected, second array predicted:
+E[12.66708362 27.07657223  4.47814547];[ 3.62837278 29.30990843  0.917828  ];
+px[-3.69903097 -6.37291283  1.10425182];[ 2.26071899  6.56587372 -1.11122794];
+py[-2.1445834  -0.40453427 -3.529767  ];[ 0.35480209  1.01508682 -1.25247958];
+Percentage within 10% of true value for all conserved quantities: 0.0%

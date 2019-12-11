@@ -2,114 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Example_Plots/Example_lowAndHighMass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example_Plots/Example_lowAndHighMass_small.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Example_Plots/Generic_Collision.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EHist10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-LossConv10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-PxHist10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-PyHist10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-EHist10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-EWith10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-LossConv10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-PxHist10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-PyHist10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-p_xWith10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEE-p_yWith10000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich MSE/NCEEOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-EHist100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-EWith100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-LossConv100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-PxHist100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-PyHist100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-p_xWith100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEE-p_yWith100000SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/NCEEOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/Sandwich Models/Best Sandwich Model 100000 Training Samples/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NCEE_No_Mass_Prediction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKT-Output/MAPE_Loss_4LReLU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_BestCase_Kinematic_1Layer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_BestCase_Kinematic_1Layer_Linear.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_18Layers_Accel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_1Layers_Accel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_1LinearLayer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_1LinearLayers_NearUnity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_2Layers_Accel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_4Layers_Accel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_4Layers_LeakyReLU_Accel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_4LinearLayers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_4ReLULayers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_500Sample_4ReLULayers_NearUnity.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_50Sample_1LinearLayers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_50Sample_4LinearLayers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Convergence_Kinematic_50Sample_4ReLULayers.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Energy_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Loss_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/Momentum_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/NSKTPC-Energy500SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/NSKTPC-LossConv500SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/Old Output/NSKTPC-Momentum500SamplesAnd100Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKT_Loss_Convergence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST_Loss_Convergence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Net_Collision_Classification.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SimulateMisses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-EHist10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-EWith10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-LossConv10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-PxHist10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-PyHist10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-p_xWith10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-p_yWith10000SamplesAnd10Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTEOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKT-Output/NSKT_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKT-Output/Old Output/MAPE_Loss_4LReLU.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Net_Bidrectional_Single_Timestep_Estimation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CheckPosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/CheckPosition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_BestCase_Kinematic_1Layer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_BestCase_Kinematic_1Layer_Linear.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_18Layers_Accel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_1Layers_Accel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_1LinearLayer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_1LinearLayers_NearUnity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_2Layers_Accel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_4Layers_Accel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_4Layers_LeakyReLU_Accel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_4LinearLayers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_4ReLULayers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_500Sample_4ReLULayers_NearUnity.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_50Sample_1LinearLayers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_50Sample_4LinearLayers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Convergence_Kinematic_50Sample_4ReLULayers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Energy_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Loss_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/Momentum_Single_Kinematic_500Sample_1000Epoch_4Layers_NoAccel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Energy500SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Energy500SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-LossConv500SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-LossConv500SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Momentum500SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Momentum500SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Collision_Endpoint_Estimation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Single_Timestep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Timestep.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Outdated Code/Net_Single_Kinematic_Timestep.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-EHist10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-LossConv10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-PxHist10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-PyHist10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd100Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.data-00000-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.data-00001-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/saved_model.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKT-Output/MAPE_Loss_4LReLU.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd1000Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd1000Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd1000Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKT_Loss_Convergence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST_Loss_Convergence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PredictState.py" beforeDir="false" afterPath="$PROJECT_DIR$/PredictState.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +69,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Net_Collision_Classification.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/PredictState.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -152,7 +88,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Net_Collision_Classification">
+  <component name="RunManager" selected="Python.PredictState">
     <configuration name="CalculateConserved" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -229,6 +165,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/NCEE_No_Mass_Prediction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Net_Bidrectional_Single_Timestep_Estimation" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Bidrectional_Single_Timestep_Estimation.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -620,6 +577,7 @@
       <item itemvalue="Python.Net_Single_Kinematic_Timestep_Plus_Conservation" />
       <item itemvalue="Python.SimulateMisses" />
       <item itemvalue="Python.Net_Collision_Classification" />
+      <item itemvalue="Python.Net_Bidrectional_Single_Timestep_Estimation" />
       <item itemvalue="Python.CalculateConserved" />
       <item itemvalue="Python.RNN" />
       <item itemvalue="Python.RNN_2" />
@@ -683,11 +641,6 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SimulateCollisions.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/NCEE_No_Mass_Prediction.py</url>
           <line>122</line>
           <option name="timeStamp" value="26" />
@@ -712,15 +665,36 @@
           <line>84</line>
           <option name="timeStamp" value="36" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SimulateCollisions.py</url>
+          <line>196</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Net_Bidrectional_Single_Timestep_Estimation.py</url>
+          <line>83</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PredictState.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PredictState.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="input_state" />
-        <watch expression="prediction" language="Python" />
-        <watch expression="target_state" />
-        <watch expression="d_min" />
-        <watch expression="t_min" />
+        <watch expression="target_Arr" />
+        <watch expression="input_Arr" />
+        <watch expression="Position1L_firstSecond" />
+        <watch expression="dt_Arr" />
+        <watch expression="Velocity1L_firstSecond" />
+        <watch expression="plotThisX" />
       </configuration>
     </watches-manager>
   </component>
