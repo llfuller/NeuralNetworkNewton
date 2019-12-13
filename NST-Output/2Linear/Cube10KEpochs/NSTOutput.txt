@@ -1,0 +1,23 @@
+MSE
+loss: 5462744.5000
+
+Input: 
+[[  0.   1.   8.  27.  64. 125. 216. 343. 512.]]
+
+Prediction: 
+[[147.04146 366.77835 499.85355 529.7106  476.87527 521.6914  608.0648
+  510.89993 683.107  ]]
+Actual target state: 
+[[ 729. 1000. 1331. 1728. 2197. 2744. 3375. 4096. 4913.]]
+
+model = Sequential()
+model.add(Dense(9, input_dim = 9, activation='linear'))
+model.add(Dense(9, activation='linear'))
+
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])

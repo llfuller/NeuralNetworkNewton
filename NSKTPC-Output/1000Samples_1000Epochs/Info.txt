@@ -1,0 +1,47 @@
+loss: 6.9445e-04 - mean_absolute_percentage_error: 16218.2041 - val_loss: 6.6078e-04 
+
+Input: 
+[[0.67718257 0.03306372 0.         0.19386488]
+ [0.39745799 0.7588056  0.         0.19721804]
+ [0.91249125 0.76161193 0.         0.55291715]
+ ...
+ [0.48118836 0.17569119 0.         0.75560294]
+ [0.92351806 0.37558903 0.         0.15032459]
+ [0.09741847 0.73074179 0.         0.38724391]]
+Prediction: 
+[[6.6433251e-01 3.1252149e-02 2.3607910e-04]
+ [5.3931606e-01 7.5797898e-01 1.1831522e-04]
+ [1.3018999e+00 7.6068956e-01 1.9495934e-04]
+ ...
+ [6.2125766e-01 1.7377202e-01 9.7051263e-05]
+ [9.7953290e-01 3.7421894e-01 2.5017560e-04]
+ [3.3123934e-01 7.2987342e-01 5.9597194e-05]]
+Actual target state: 
+[[0.68359246 0.03306372 0.        ]
+ [0.54710814 0.7588056  0.        ]
+ [1.33359955 0.76161193 0.        ]
+ ...
+ [0.61394114 0.17569119 0.        ]
+ [0.97997833 0.37558903 0.        ]
+ [0.38039377 0.73074179 0.        ]]
+
+model = Sequential()
+dim = sp.shape(state_input)[1]
+model.add(Dense(dim, input_dim = dim, activation='linear'))
+model.add(Dense(dim, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(dim, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(dim-1, activation='linear'))
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+
+
+history = model.fit(state_input, state_output, batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (val_input, val_output),
+                    use_multiprocessing = True)

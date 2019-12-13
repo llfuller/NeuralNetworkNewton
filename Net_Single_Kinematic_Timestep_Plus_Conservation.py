@@ -16,7 +16,7 @@ plotHistory = True
 trainOnAcceleration = True
 batchSize = 32
 numEpochs = 1000
-numSamples = 500
+numSamples = 1000
 
 #===============================================================================================================
 #   Generating Input and Output for Network
@@ -162,7 +162,7 @@ if plotHistory == True:
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
     axes = plt.gca()
-    axes.set_ylim(0, 100)
+    axes.set_ylim(0, 0.5)
     plt.savefig("NSKTPC-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
 
 #===============================================================================================================

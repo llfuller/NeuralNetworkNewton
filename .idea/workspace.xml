@@ -2,16 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NST-Output/Alternating10KEpochs/NSTOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/Alternating10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/Identity10KEpochs/NSTOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/Identity10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/NSTOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/Zeros10KEpochs/NSTOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/Zeros10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/Info.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/NSKTPC-Energy1000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/NSKTPC-LossConv1000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/NSKTPC-Momentum1000SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/1000Samples_1000Epochs/trainedModel_temp.hd5/variables/variables.index" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/500Samples_1000Epochs/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/500Samples_1000Epochs/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/500Samples_1000Epochs/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2LeakyReLU/Alternating10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2LeakyReLU/Alternating10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2LeakyReLU/Identity10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2LeakyReLU/Identity10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2LeakyReLU/Zeros10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2LeakyReLU/Zeros10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Alternating10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Alternating10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Cube10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Cube10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Identity10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Identity10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Zeros10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/2Linear/Zeros10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Net_Simple_Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NST-Output/NST_Loss_Convergence.png" beforeDir="false" afterPath="$PROJECT_DIR$/NST-Output/NST_Loss_Convergence.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Net_Single_Timestep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Timestep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Energy500SamplesAnd1000Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-LossConv500SamplesAnd1000Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Momentum500SamplesAnd1000Epochs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/Alternating10KEpochs/NSTOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/Alternating10KEpochs/NST_Loss_Convergence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/Identity10KEpochs/NSTOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/Identity10KEpochs/NST_Loss_Convergence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/Zeros10KEpochs/NSTOutput.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/Zeros10KEpochs/NST_Loss_Convergence.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_Single_Timestep.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
@@ -39,7 +68,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Net_Single_Timestep.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Net_Simple_Test.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -58,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Net_Single_Timestep">
+  <component name="RunManager" selected="Python.Net_Simple_Test">
     <configuration name="CalculateConserved" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -206,6 +235,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Net_Simple_Test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="NeuralNetworkNewton" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Simple_Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Net_Single_Kinematic_Timestep" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -240,27 +290,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Single_Kinematic_Timestep_Plus_Conservation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Net_Single_Timestep" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <module name="NeuralNetworkNewton" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="D:\Anaconda3\envs\tf-gpu\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Net_Single_Timestep.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -559,7 +588,7 @@
       <item itemvalue="Python.Net_Collision_Endpoint_Estimation" />
       <item itemvalue="Python.NCEE_No_Mass_Prediction" />
       <item itemvalue="Python.RunSimulationThenNCEE" />
-      <item itemvalue="Python.Net_Single_Timestep" />
+      <item itemvalue="Python.Net_Simple_Test" />
       <item itemvalue="Python.Net_Single_Kinematic_Timestep" />
       <item itemvalue="Python.PredictState" />
       <item itemvalue="Python.Sentdex Youtube Tutorial" />
@@ -604,11 +633,6 @@
           <url>file://$PROJECT_DIR$/RNN_LSTM.py</url>
           <line>87</line>
           <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Net_Single_Timestep.py</url>
-          <line>79</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/NCEE_No_Mass_Prediction.py</url>

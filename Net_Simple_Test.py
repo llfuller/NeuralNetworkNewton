@@ -15,15 +15,20 @@ from tensorflow.keras.models import load_model
 plotHistory = True
 batchSize = 32
 numEpochs = 10000
-learnIdentity = True
+learnIdentity = False
 learnZeros = False
 learnAlternating = False
+learnCube = True
 
 model = Sequential()
 model.add(Dense(9, input_dim = 9, activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
+for i in range(50):
+    model.add(Dense(3, activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(9, activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
+
 
 
 #Compile:
@@ -54,8 +59,13 @@ if not learnIdentity:
     if learnAlternating:
         state_output = sp.multiply(alternating5,stateMultiplier)
         state_output_val = sp.multiply(alternating5,3*stateMultiplier)
-
-
+    if learnCube:
+        state_input = sp.array([sp.arange(9)]).astype(float)
+        state_input_val = sp.array([sp.power(sp.arange(9),3)]).astype(float)
+        state_output = sp.array([sp.arange(9,18)]).astype(float)
+        state_output_val = sp.array([sp.power(sp.arange(9,18),3)]).astype(float)
+print(state_input)
+print(sp.shape(state_input))
 history = model.fit(state_input, state_output, batch_size= batchSize, epochs=numEpochs,
                     validation_data = (state_input_val, state_output_val),
                     use_multiprocessing = True)

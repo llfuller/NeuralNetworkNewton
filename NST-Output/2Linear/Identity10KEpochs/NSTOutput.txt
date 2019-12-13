@@ -1,0 +1,25 @@
+loss: 3.3159e-13
+
+model = Sequential()
+model.add(Dense(9, input_dim = 9, activation='linear'))
+model.add(Dense(9, activation='linear'))
+
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+
+Input: 
+[[3. 3. 3. 3. 3. 3. 3. 3. 3.]
+ [6. 6. 6. 6. 6. 6. 6. 6. 6.]]
+Prediction: 
+[[2.9999995 2.9999998 2.9999995 3.0000002 3.0000002 3.        3.0000002
+  3.        3.0000002]
+ [5.9999995 6.000001  5.999999  6.0000005 6.000001  6.        6.000001
+  6.000001  6.0000005]]
+Actual target state: 
+[[3. 3. 3. 3. 3. 3. 3. 3. 3.]
+ [6. 6. 6. 6. 6. 6. 6. 6. 6.]]
