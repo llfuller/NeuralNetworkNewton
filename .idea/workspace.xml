@@ -2,50 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8eee42c-aa6e-4df7-a6ed-185317cc8570" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-EHist10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-EWith10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-LossConv10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-PxHist10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-PyHist10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-p_xWith10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTE-p_yWith10000SamplesAnd10Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/NBSTEOutput.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/saved_model.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NBSTE-Output/trainedModel_NCEE.hd5/variables/variables.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKT-Output/NSKT_Loss_Convergence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKT-Output/Old Output/MAPE_Loss_4LReLU.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Energy500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-LossConv500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NSKTPC-Output/NSKTPC-Momentum500SamplesAnd1000Epochs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/NST-Output/NST_Loss_Convergence.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Net_Bidrectional_Single_Timestep_Estimation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/Alternating10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/Alternating10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/Identity10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/Identity10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/Zeros10KEpochs/NSTOutput.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NST-Output/Zeros10KEpochs/NST_Loss_Convergence.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-EHist10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-EWith10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-LossConv10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-PxHist10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-PyHist10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_xWith10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEE-p_yWith10000SamplesAnd100Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/NCEEOutput.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.data-00000-of-00002" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.data-00001-of-00002" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCC.hd5/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00000-of-00002" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.data-00001-of-00002" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NCEE-Output/trainedModel_NCEE.hd5/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKT-Output/MAPE_Loss_4LReLU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Energy500SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-LossConv500SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKTPC-Momentum500SamplesAnd1000Epochs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NSKT_Loss_Convergence.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NST_Loss_Convergence.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PredictState.py" beforeDir="false" afterPath="$PROJECT_DIR$/PredictState.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SimulateCollisions.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimulateCollisions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NST-Output/NST_Loss_Convergence.png" beforeDir="false" afterPath="$PROJECT_DIR$/NST-Output/NST_Loss_Convergence.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Net_Single_Timestep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Net_Single_Timestep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00000-of-00002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.data-00001-of-00002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/trainedModel_temp.hd5/variables/variables.index" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +39,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/PredictState.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Net_Single_Timestep.py" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -88,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.PredictState">
+  <component name="RunManager" selected="Python.Net_Single_Timestep">
     <configuration name="CalculateConserved" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="NeuralNetworkNewton" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -637,7 +607,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Net_Single_Timestep.py</url>
-          <line>65</line>
+          <line>79</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

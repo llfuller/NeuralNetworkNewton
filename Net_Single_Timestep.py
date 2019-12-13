@@ -14,7 +14,10 @@ from tensorflow.keras.models import load_model
 
 plotHistory = True
 batchSize = 32
-numEpochs = 2000
+numEpochs = 10000
+learnIdentity = True
+learnZeros = False
+learnAlternating = False
 
 model = Sequential()
 model.add(Dense(9, input_dim = 9, activation='linear'))
@@ -40,18 +43,29 @@ for i in range(len(alternating5)):
     stateMultiplier[i,:] = i+1
 
 state_input = sp.multiply(sp.ones((2,9)), stateMultiplier)
-state_output = state_input+0*sp.multiply(alternating5,stateMultiplier)
+state_input_val = sp.multiply(sp.ones((2,9)), 3*stateMultiplier)
+state_output = state_input
+state_output_val = state_input_val
+
+if not learnIdentity:
+    if learnZeros:
+        state_output = sp.zeros((2,9))#state_input+0*sp.multiply(alternating5,stateMultiplier)
+        state_output_val = sp.zeros((2,9))#3*state_input+0*sp.multiply(alternating5,3*stateMultiplier)
+    if learnAlternating:
+        state_output = sp.multiply(alternating5,stateMultiplier)
+        state_output_val = sp.multiply(alternating5,3*stateMultiplier)
+
 
 history = model.fit(state_input, state_output, batch_size= batchSize, epochs=numEpochs,
-                    validation_data = (state_input, state_output),
+                    validation_data = (state_input_val, state_output_val),
                     use_multiprocessing = True)
 
 model.summary()
 model.save("trainedModel_temp.hd5")
 
 #Predict next state of system from current state
-input_state = state_input
-target_state = state_output
+input_state = state_input_val
+target_state = state_output_val
 model = load_model('trainedModel_temp.hd5')
 model.evaluate(x=input_state, y=target_state)
 prediction = model.predict(input_state)
@@ -72,8 +86,10 @@ if plotHistory == True:
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
-    axes=plt.gca()
-    #axes.set_ylim(0, 1)
-    plt.savefig("NST_Loss_Convergence.png")
-    plt.show()
+    axes = plt.gca()
+    axes.set_ylim(0, 1)
+    plt.savefig("NST-Output/NST_Loss_Convergence.png")
+    #plt.show()
+
+outputFile =  open("NST-Output/NSTOutput.txt","w+")
 

@@ -1,0 +1,31 @@
+MSE, Adam
+
+loss: 4.7638e-12
+
+Input: 
+[[3. 3. 3. 3. 3. 3. 3. 3. 3.]
+ [6. 6. 6. 6. 6. 6. 6. 6. 6.]]
+Prediction: 
+[[-1.1209399e-06 -1.4511869e-06 -1.7121434e-06  3.3434480e-07
+  -8.0186879e-07  8.4564090e-07 -6.6915527e-07  3.1664968e-06
+  -9.5525763e-07]
+ [-2.2653492e-06 -2.9934572e-06 -3.3393503e-06  6.9197267e-07
+  -1.5886501e-06  1.2330711e-06 -1.2634323e-06  5.6102872e-06
+  -1.9387344e-06]]
+Actual target state: 
+[[0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+
+model = Sequential()
+model.add(Dense(9, input_dim = 9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
