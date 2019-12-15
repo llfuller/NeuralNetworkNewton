@@ -1,0 +1,63 @@
+ loss: 10824.0674 - mean_absolute_percentage_error: 473.8117 - val_loss: 10843.0764 - val_mean_absolute_percentage_error: 1494.5383
+
+Samples:10000; Epochs:100
+Runtime: 252.8320209980011 seconds
+Energy median: 0.0
+X Momentum median: 0.0
+Y Momentum median: 0.0
+First array expected, second array predicted:
+E[12.66708362 27.07657223  4.47814547];[14.79450816 18.67482609 16.52803598];
+px[-3.69903097 -6.37291283  1.10425182];[-3.32413104 -3.8656128  -5.88284344];
+py[-2.1445834  -0.40453427 -3.529767  ];[-3.2097783  -3.63064263 -3.98466127];
+Percentage within 10% of true value for all conserved quantities: 0.91%
+
+model.add(Dense(5+sp.shape(target_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+# model.add(LeakyReLU(alpha=0.3))
+#
+for i in range(5):
+    model.add(Dense(5+sp.shape(target_Arr)[1], activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(target_Arr)[1], activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=5e-4, decay = 1e-7)
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (input_Arr_val, target_Arr_val),
+                    use_multiprocessing = True)
+
+model.save("NBSTE-Output\\trainedModel_NCEE.hd5")
+
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 9)                 54        
+_________________________________________________________________
+dense_1 (Dense)              (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu (LeakyReLU)      (None, 9)                 0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu_1 (LeakyReLU)    (None, 9)                 0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu_2 (LeakyReLU)    (None, 9)                 0         
+_________________________________________________________________
+dense_4 (Dense)              (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu_3 (LeakyReLU)    (None, 9)                 0         
+_________________________________________________________________
+dense_5 (Dense)              (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu_4 (LeakyReLU)    (None, 9)                 0         
+_________________________________________________________________
+dense_6 (Dense)              (None, 4)                 40        
+_________________________________________________________________
+leaky_re_lu_5 (LeakyReLU)    (None, 4)                 0         
+=================================================================
+Total params: 544

@@ -1,0 +1,28 @@
+Samples:10000; Epochs:100
+Runtime: 200.20278596878052 seconds
+Energy median: 0.0
+X Momentum median: 0.0
+Y Momentum median: 0.0
+First array expected, second array predicted:
+E[12.66708362 27.07657223  4.47814547];[ 2.9604975   5.66601229 10.00772801];
+px[-3.69903097 -6.37291283  1.10425182];[-0.87550596 -1.48253895 -4.45627621];
+py[-2.1445834  -0.40453427 -3.529767  ];[1.87251098 2.5169755  3.27269034];
+Percentage within 10% of true value for all conserved quantities: 0.0%
+
+model = Sequential()
+model.add(Dense(sp.shape(input_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+for i in range(5):
+    model.add(Dense(sp.shape(input_Arr)[1]*8, activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(target_Arr)[1], activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (input_Arr_val, target_Arr_val),
+                    use_multiprocessing = True)

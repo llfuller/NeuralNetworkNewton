@@ -14,20 +14,19 @@ from tensorflow.keras.models import load_model
 
 plotHistory = True
 batchSize = 32
-numEpochs = 10000
+numEpochs = 6000
 learnIdentity = False
 learnZeros = False
-learnAlternating = False
-learnCube = True
+learnAlternating = True
+learnCube = False
+
 
 model = Sequential()
 model.add(Dense(9, input_dim = 9, activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
-for i in range(50):
-    model.add(Dense(3, activation='linear'))
-    model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(9, activation='linear'))
 model.add(LeakyReLU(alpha=0.3))
+
 
 
 
@@ -71,12 +70,12 @@ history = model.fit(state_input, state_output, batch_size= batchSize, epochs=num
                     use_multiprocessing = True)
 
 model.summary()
-model.save("trainedModel_temp.hd5")
+model.save("NST-Output\\trainedModel_temp.hd5")
 
 #Predict next state of system from current state
 input_state = state_input_val
 target_state = state_output_val
-model = load_model('trainedModel_temp.hd5')
+model = load_model("NST-Output\\trainedModel_temp.hd5")
 model.evaluate(x=input_state, y=target_state)
 prediction = model.predict(input_state)
 print("Axes: (row: time, column: feature)")
@@ -95,9 +94,10 @@ if plotHistory == True:
     plt.title('Model loss')
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.legend(['Training', 'Validation'], loc='upper left')
     axes = plt.gca()
-    axes.set_ylim(0, 1)
+    # axes.set_ylim(0, 0.1)#IdentityAndZero
+    axes.set_ylim(0, 0.2)#Alternating
     plt.savefig("NST-Output/NST_Loss_Convergence.png")
     #plt.show()
 

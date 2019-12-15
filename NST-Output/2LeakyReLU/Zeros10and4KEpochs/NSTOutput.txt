@@ -1,0 +1,44 @@
+MSE, Adam
+numEpochs = 4000
+loss: 1.0125e-04 - mean_absolute_percentage_error: 4374006.5000
+Input: 
+[[3. 3. 3. 3. 3. 3. 3. 3. 3.]
+ [6. 6. 6. 6. 6. 6. 6. 6. 6.]]
+Prediction: 
+[[ 3.8449280e-04 -2.2179634e-05 -2.9037567e-04  4.3241307e-06
+   4.1451603e-03  2.4429057e-05  9.6981358e-03  1.6553802e-03
+  -4.0127314e-05]
+ [ 1.4908742e-03 -5.8016743e-05 -7.5883244e-04  1.7325394e-05
+   1.6030490e-02  9.3317125e-05  3.7517115e-02  6.3964529e-03
+  -1.0509042e-04]]
+Actual target state: 
+[[0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+dense (Dense)                (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu (LeakyReLU)      (None, 9)                 0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 9)                 90        
+_________________________________________________________________
+leaky_re_lu_1 (LeakyReLU)    (None, 9)                 0         
+=================================================================
+Total params: 180
+
+model = Sequential()
+model.add(Dense(9, input_dim = 9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])

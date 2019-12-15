@@ -23,7 +23,7 @@ plotHistory = True
 numSamples = 10000
 T = 199 # max number of timesteps in matrix
 batchSize = 32
-numEpochs = 100 # Converges around 300 for LeakyReLU + 3 Dense
+numEpochs = 400 # Converges around 300 for LeakyReLU + 3 Dense
 
 #===============================================================================================================
 #   Import Simulation Data and Preprocess
@@ -213,9 +213,9 @@ if plotHistory == True:
     plt.title('Model loss')
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.legend(['Training', 'Validation'], loc='upper left')
     axes = plt.gca()
-    axes.set_ylim(0, 100)
+    axes.set_ylim(0, 40)
     plt.savefig("NCEE-Output\\NCEE-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
 model.summary()
 # plt.show()

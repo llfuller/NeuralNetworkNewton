@@ -13,7 +13,7 @@ import CalculateConserved as CalcConsd
 #          Below observations (at end of code) apply to all neural networks of this type applied to this data structure.
 
 plotHistory = True
-trainOnAcceleration = True
+trainOnAcceleration = False
 batchSize = 32
 numEpochs = 1000
 numSamples = 1000
@@ -25,12 +25,16 @@ numSamples = 1000
 # row: time || col: x, v, dt
 randomPositions  = sp.multiply(sp.rand(numSamples,1),1)
 randomVelocities = sp.multiply(sp.rand(numSamples,1),1)
-randomAccels = sp.multiply(sp.rand(numSamples,1),0)
+randomAccels = sp.multiply(sp.rand(numSamples,1),trainOnAcceleration)
 randomDeltaTs    = sp.multiply(sp.rand(numSamples,1),1)
 randomPositions_val  = sp.multiply(sp.rand(numSamples,1),1)
 randomVelocities_val = sp.multiply(sp.rand(numSamples,1),1)
-randomAccels_val = sp.multiply(sp.rand(numSamples,1),0)
+randomAccels_val = sp.multiply(sp.rand(numSamples,1),trainOnAcceleration)
 randomDeltaTs_val    = sp.multiply(sp.rand(numSamples,1),1)
+randomPositions_test  = sp.multiply(sp.rand(numSamples,1),1)
+randomVelocities_test = sp.multiply(sp.rand(numSamples,1),1)
+randomAccels_test = sp.multiply(sp.rand(numSamples,1),trainOnAcceleration)
+randomDeltaTs_test    = sp.multiply(sp.rand(numSamples,1),1)
 # Calculate final positions and velocities
 positions_f = randomPositions+sp.multiply(randomVelocities,randomDeltaTs)\
               +sp.multiply(sp.multiply(randomAccels,0.5),sp.power(randomDeltaTs,2))
@@ -38,22 +42,33 @@ velocities_f = randomVelocities+sp.multiply(randomDeltaTs,randomAccels)
 positions_val_f = randomPositions_val+sp.multiply(randomVelocities_val,randomDeltaTs_val)\
                   +sp.multiply(sp.multiply(randomAccels_val,0.5),sp.power(randomDeltaTs_val,2))
 velocities_val_f = randomVelocities_val+sp.multiply(randomDeltaTs_val,randomAccels_val)
+positions_test_f = randomPositions_test+sp.multiply(randomVelocities_test,randomDeltaTs_test)\
+                  +sp.multiply(sp.multiply(randomAccels_test,0.5),sp.power(randomDeltaTs_test,2))
+velocities_test_f = randomVelocities_test+sp.multiply(randomDeltaTs_test,randomAccels_test)
 # Define initial and final state tensors
-if(trainOnAcceleration):
-    state_input = sp.hstack((randomPositions,randomVelocities,randomAccels, randomDeltaTs))
-    # state_output = sp.hstack((positions_f, velocities_f,randomAccels, randomDeltaTs))
-    state_output = sp.hstack((positions_f, velocities_f,randomAccels))
-    val_input = sp.hstack((randomPositions_val,randomVelocities_val,randomAccels_val, randomDeltaTs_val))
-    val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val))
-    # val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val,randomDeltaTs_val))
-else:
-    state_input = sp.hstack((randomPositions,randomVelocities, randomDeltaTs))
-    state_output = sp.hstack((positions_f, velocities_f))
-    # state_output = sp.hstack((positions_f, velocities_f, randomDeltaTs))
-    val_input = sp.hstack((randomPositions_val,randomVelocities_val, randomDeltaTs_val))
-    val_output = sp.hstack((positions_val_f,velocities_val_f))
-    # val_output = sp.hstack((positions_val_f,velocities_val_f,randomDeltaTs_val))
-# Can this figure out the rule x_f = x_i + v*dt? Let's see!
+state_input = sp.hstack((randomPositions,randomVelocities,randomAccels, randomDeltaTs))
+# state_output = sp.hstack((positions_f, velocities_f,randomAccels, randomDeltaTs))
+state_output = sp.hstack((positions_f, velocities_f,randomAccels))
+val_input = sp.hstack((randomPositions_val,randomVelocities_val,randomAccels_val, randomDeltaTs_val))
+val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val))
+test_input = sp.hstack((randomPositions_test,randomVelocities_test,randomAccels_test, randomDeltaTs_test))
+test_output = sp.hstack((positions_test_f,velocities_test_f,randomAccels_test))
+# val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val,randomDeltaTs_val))
+# if(trainOnAcceleration):
+#     state_input = sp.hstack((randomPositions,randomVelocities,randomAccels, randomDeltaTs))
+#     # state_output = sp.hstack((positions_f, velocities_f,randomAccels, randomDeltaTs))
+#     state_output = sp.hstack((positions_f, velocities_f,randomAccels))
+#     val_input = sp.hstack((randomPositions_val,randomVelocities_val,randomAccels_val, randomDeltaTs_val))
+#     val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val))
+#     # val_output = sp.hstack((positions_val_f,velocities_val_f,randomAccels_val,randomDeltaTs_val))
+# else:
+#     state_input = sp.hstack((randomPositions,randomVelocities, randomDeltaTs))
+#     state_output = sp.hstack((positions_f, velocities_f))
+#     # state_output = sp.hstack((positions_f, velocities_f, randomDeltaTs))
+#     val_input = sp.hstack((randomPositions_val,randomVelocities_val, randomDeltaTs_val))
+#     val_output = sp.hstack((positions_val_f,velocities_val_f))
+#     # val_output = sp.hstack((positions_val_f,velocities_val_f,randomDeltaTs_val))
+# # Can this figure out the rule x_f = x_i + v*dt? Let's see!
 
 #===============================================================================================================
 #   Network
@@ -81,16 +96,16 @@ history = model.fit(state_input, state_output, batch_size= batchSize, epochs=num
                     use_multiprocessing = True)
 
 model.summary()
-model.save("trainedModel_temp.hd5")
+model.save("NSKTPC-Output\\trainedModel_NSKTPC.hd5")
 
 #===============================================================================================================
 #   E and P Prediction and Comparison
 #===============================================================================================================
 
 #Predict next state of system from current state
-input_state = val_input
-target_state = val_output
-model = load_model('trainedModel_temp.hd5')
+input_state = test_input
+target_state = test_output
+model = load_model('NSKTPC-Output\\trainedModel_NSKTPC.hd5')
 model.evaluate(x=input_state, y=target_state)
 prediction = model.predict(input_state)
 print("Axes: (row: time, column: feature)")
@@ -103,33 +118,33 @@ print(target_state)
 
 # Generate masses to assist in energy and momentum calculation
 randomM1 = sp.multiply(sp.rand(numSamples,1),1)
-randomM1_val = sp.multiply(sp.rand(numSamples,1),1)
+randomM1_test = sp.multiply(sp.rand(numSamples,1),1)
 velocities_predicted = sp.array([prediction[:,1]]).transpose()
 
 # first time energy and momentum
 E_i_train = CalcConsd.energy_one(randomM1, randomVelocities)
 p_i_train = CalcConsd.momentum_one(randomM1, randomVelocities)
-E_i_val = CalcConsd.energy_one(randomM1_val, randomVelocities_val)
-p_i_val = CalcConsd.momentum_one(randomM1_val, randomVelocities_val)
+E_i_test = CalcConsd.energy_one(randomM1_test, randomVelocities_test)
+p_i_test = CalcConsd.momentum_one(randomM1_test, randomVelocities_test)
 # second time energy and momentum
 E_f_train = CalcConsd.energy_one(randomM1, randomVelocities)
 p_f_train = CalcConsd.momentum_one(randomM1, randomVelocities)
-E_f_val = CalcConsd.energy_one(randomM1_val, randomVelocities_val)
-E_f_val_predicted = CalcConsd.energy_one(randomM1_val, velocities_predicted)
-p_f_val = CalcConsd.momentum_one(randomM1_val, randomVelocities_val)
-p_f_val_predicted = CalcConsd.momentum_one(randomM1_val, velocities_predicted)
+E_f_test = CalcConsd.energy_one(randomM1_test, randomVelocities_test)
+E_f_test_predicted = CalcConsd.energy_one(randomM1_test, velocities_predicted)
+p_f_test = CalcConsd.momentum_one(randomM1_test, randomVelocities_test)
+p_f_test_predicted = CalcConsd.momentum_one(randomM1_test, velocities_predicted)
 
 # For plotting energy and momentum ratio of target to predicted states after training is done
 horiz_Axis = sp.linspace(1,numSamples+1, numSamples)
-E_val_ratio = sp.divide((E_f_val_predicted-E_f_val),E_f_val)
-p_val_ratio = sp.divide((p_f_val_predicted-p_f_val),p_f_val)
+E_test_ratio = sp.divide((E_f_test_predicted-E_f_test),E_f_test)
+p_test_ratio = sp.divide((p_f_test_predicted-p_f_test),p_f_test)
 # Statistics of conserved quantity prediction error
-E_val_ratio_avg = sp.mean(E_val_ratio)
-p_val_ratio_avg = sp.mean(p_val_ratio)
-E_val_ratio_std = sp.std(E_val_ratio)
-p_val_ratio_std = sp.std(p_val_ratio)
-# print("Energy error: "+str(E_val_ratio_avg)+" +- "+str(E_val_ratio_std))
-# print("Momentum error: "+str(p_val_ratio_avg)+" +- "+str(p_val_ratio_std))
+E_test_ratio_avg = sp.mean(E_test_ratio)
+p_test_ratio_avg = sp.mean(p_test_ratio)
+E_test_ratio_std = sp.std(E_test_ratio)
+p_test_ratio_std = sp.std(p_test_ratio)
+# print("Energy error: "+str(E_test_ratio_avg)+" +- "+str(E_test_ratio_std))
+# print("Momentum error: "+str(p_test_ratio_avg)+" +- "+str(p_test_ratio_std))
 
 #===============================================================================================================
 #   Plotting + File Output
@@ -137,33 +152,33 @@ p_val_ratio_std = sp.std(p_val_ratio)
 
 # Plotting conserved quantity error ratios over all validation samples
 plt.figure()
-plt.scatter(horiz_Axis,E_val_ratio,s=10,color='g')
+plt.scatter(horiz_Axis,E_test_ratio,s=10,color='g')
 plt.xlabel("Index")
 plt.ylabel("Energy Error Ratio")
 plt.title("Energy Error Ratio")
 axes = plt.gca()
 axes.set_ylim(-1.2, 1)
-plt.savefig("NSKTPC-Energy" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+plt.savefig("NSKTPC-Output\\NSKTPC-Energy" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
 plt.figure()
-plt.scatter(horiz_Axis,p_val_ratio,s=10,color='b')
+plt.scatter(horiz_Axis,p_test_ratio,s=10,color='b')
 plt.xlabel("Index")
 plt.ylabel("Momentum Error Ratio")
 plt.title("Momentum Error Ratio")
 axes = plt.gca()
 axes.set_ylim(-1.2, 1)
-plt.savefig("NSKTPC-Momentum" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+plt.savefig("NSKTPC-Output\\NSKTPC-Momentum" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
 if plotHistory == True:
     # Plot training & validation loss values
     plt.figure()
     plt.plot(history.history['loss'][1:])
-    plt.plot(history.history['val_loss'][1:])
+    plt.plot(history.history['val_loss'][1:],':')
     plt.title('Model loss')
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.legend(['Training', 'Validation'], loc='upper left')
     axes = plt.gca()
-    axes.set_ylim(0, 0.5)
-    plt.savefig("NSKTPC-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+    axes.set_ylim(0, 0.1)
+    plt.savefig("NSKTPC-Output\\NSKTPC-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
 
 #===============================================================================================================
 #   Observations

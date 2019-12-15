@@ -1,0 +1,31 @@
+MSE, Adam
+6K epochs
+loss: 1.0216e-04 - mean_absolute_percentage_error: 0.0300
+
+Input: 
+[[3. 3. 3. 3. 3. 3. 3. 3. 3.]
+ [6. 6. 6. 6. 6. 6. 6. 6. 6.]]
+Prediction: 
+[[14.994695   3.0002782 15.00177    2.9995756 15.008678   2.9997125
+  14.997289   2.9998515 14.993281 ]
+ [29.982782   6.0009036 30.005749   5.9986215 30.028173   5.999064
+  29.991192   5.999518  29.978212 ]]
+Actual target state: 
+[[15.  3. 15.  3. 15.  3. 15.  3. 15.]
+ [30.  6. 30.  6. 30.  6. 30.  6. 30.]]
+
+
+
+model = Sequential()
+model.add(Dense(9, input_dim = 9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(9, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
+
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])

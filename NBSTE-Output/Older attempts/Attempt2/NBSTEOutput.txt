@@ -1,0 +1,32 @@
+Samples:10000; Epochs:100
+ loss: 9871.7520 - mean_absolute_percentage_error: 1199.0720 - val_loss: 11088.4203 - val_mean_absolute_percentage_error: 2809.1074
+Runtime: 200.2301733493805 seconds
+Energy median: 0.0
+X Momentum median: 0.0
+Y Momentum median: 0.0
+First array expected, second array predicted:
+E[12.66708362 27.07657223  4.47814547];[16.18818835 13.8825898  33.20441861];
+px[-3.69903097 -6.37291283  1.10425182];[-3.77482441 -4.55577558 -7.32280184];
+py[-2.1445834  -0.40453427 -3.529767  ];[-3.01905391 -0.39021487 -6.91378674];
+Percentage within 10% of true value for all conserved quantities: 3.06%
+
+model = Sequential()
+model.add(Dense(4+0*sp.shape(target_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+# model.add(LeakyReLU(alpha=0.3))
+#
+for i in range(1):
+    model.add(Dense(8, activation='linear'))
+    # model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(target_Arr)[1], activation='linear'))
+# model.add(LeakyReLU(alpha=0.3))
+
+#Compile:
+opt = tf.keras.optimizers.Adam(lr=1e-3)
+model.compile(loss= 'mse',
+              optimizer = opt,
+              metrics = ['mean_absolute_percentage_error'])
+history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
+                    validation_data = (input_Arr_val, target_Arr_val),
+                    use_multiprocessing = True)
+
+model.save("NBSTE-Output\\trainedModel_NCEE.hd5")

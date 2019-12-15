@@ -97,24 +97,27 @@ target_Arr_val = isCollision_Arr_val
 model = load_model("trainedModel_temp.hd5")
 
 model = Sequential()
-model.add(Dense(sp.shape(input_Arr)[1]*2, input_shape= sp.shape(input_Arr[0]), activation='linear'))
-model.add(Dense(sp.shape(input_Arr)[1]*2, activation='sigmoid'))
+model.add(Dense(sp.shape(input_Arr)[1]*3, input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(input_Arr)[1]*3, activation='linear'))
+model.add(LeakyReLU(alpha=0.3))
+model.add(Dense(sp.shape(input_Arr)[1]*3, activation='linear'))
 # for i in range(50):
 #     model.add(Dense(sp.shape(input_Arr)[1], activation='linear'))
 #
 #     # model.add(LeakyReLU(alpha=0.3))
-model.add(Dense(2, activation='sigmoid'))
+model.add(Dense(1, activation='sigmoid'))
 
 #Compile:
 opt = tf.keras.optimizers.Adam(lr=1e-3, decay=1e-6)
-model.compile(loss= 'mean_absolute_error',
+model.compile(loss= 'binary_crossentropy',
               optimizer = opt,
               metrics = ['accuracy'])
 history = model.fit(input_Arr, target_Arr, batch_size= batchSize, epochs=numEpochs,
                     validation_data = (input_Arr_val, target_Arr_val),
                     use_multiprocessing = True)
 
-model.save("NCEE-Output\\trainedModel_NCC.hd5")
+model.save("NCC-Output\\trainedModel_NCC.hd5")
 
 print("Time to run: ")
 print(str(time.time() - start_time)+" seconds")
@@ -136,7 +139,25 @@ for i in range(len(target_Arr_val)):
             falseOne+=1
         else:
             trueZero += 1
+
+model.summary()
+
+if plotHistory == True:
+    # Plot training & validation loss values
+    plt.figure()
+    plt.plot(history.history['loss'][1:])
+    plt.plot(history.history['val_loss'][1:])
+    plt.title('Model loss')
+    plt.ylabel('Loss')
+    plt.xlabel('Epoch')
+    plt.legend(['Training', 'Validation'], loc='upper left')
+    axes = plt.gca()
+    # axes.set_ylim(0, 0.1)
+    plt.savefig("NCC-Output\\NCC-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")
+
+
 print((trueOne, falseOne))
 print((falseZero, trueZero))
+
 # con_mat = tf.math.confusion_matrix(labels=classes, predictions=pred_from_val_input, num_classes=2, dtype=int)
 # print(con_mat[0])

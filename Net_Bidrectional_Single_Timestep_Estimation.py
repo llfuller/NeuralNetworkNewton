@@ -24,7 +24,7 @@ doJitter = False
 numSamples = 10000
 T = 199 # max number of timesteps in matrix
 batchSize = 32
-numEpochs = 10
+numEpochs = 100
 
 #===============================================================================================================
 #   Import Simulation Data and Preprocess
@@ -91,17 +91,17 @@ target_Arr_val = sp.dstack((Position1L_firstSecond_val, Velocity1L_firstSecond_v
 # model = load_model("trainedModel_temp.hd5")
 
 model = Sequential()
-model.add(Dense(4+0*sp.shape(target_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
+model.add(Dense(5+sp.shape(target_Arr)[1], input_shape= sp.shape(input_Arr[0]), activation='linear'))
 # model.add(LeakyReLU(alpha=0.3))
 #
-for i in range(1):
-    model.add(Dense(8, activation='linear'))
-    # model.add(LeakyReLU(alpha=0.3))
+for i in range(5):
+    model.add(Dense(5+sp.shape(target_Arr)[1], activation='linear'))
+    model.add(LeakyReLU(alpha=0.3))
 model.add(Dense(sp.shape(target_Arr)[1], activation='linear'))
-# model.add(LeakyReLU(alpha=0.3))
+model.add(LeakyReLU(alpha=0.3))
 
 #Compile:
-opt = tf.keras.optimizers.SGD(lr=1e-10, momentum=1e-10)
+opt = tf.keras.optimizers.Adam(lr=5e-4, decay = 1e-7)
 model.compile(loss= 'mse',
               optimizer = opt,
               metrics = ['mean_absolute_percentage_error'])
@@ -233,7 +233,7 @@ if plotHistory == True:
     plt.title('Model loss')
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
-    plt.legend(['Train', 'Test'], loc='upper left')
+    plt.legend(['Training', 'Validation'], loc='upper left')
     axes = plt.gca()
     # axes.set_ylim(0, 100)
     plt.savefig("NBSTE-Output\\NBSTE-LossConv" + str(numSamples) + "SamplesAnd" + str(numEpochs) + "Epochs.png")

@@ -1,0 +1,1 @@
+Trained model is 10K epochs, other files are 4K epochs
